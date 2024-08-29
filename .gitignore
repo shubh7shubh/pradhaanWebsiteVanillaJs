@@ -1,0 +1,15 @@
+# Ignore the assets folder
+assets/
+
+# Ignore node_modules folder
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment variables
+.env
+
+# Ignore build output
+build/
+dist/

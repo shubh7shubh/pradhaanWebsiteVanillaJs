@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0">
+            <title>Neuro Opinion Card</title>
+      </script>
+      <!-- Google tag (gtag.js) -->
+      <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-RLJMEYDWHZ"></script>
+      <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-RLJMEYDWHZ');
+</script>
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/animate.min.css">
+      <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+      <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="assets/css/apton-icons.css">
+
+      <!-- theme styles -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/responsive.css">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+            rel="stylesheet">
+
+      <style>
+    body{
+        font-family: "Quicksand", sans-serif;
+
+    }
+
+    .mandatory {
+  color: red;
+  margin-left: 2px; /* Adjust spacing as needed */
+  font-size: 23px;
+}
+        .headline {
+            text-align: center;
+            /*font-family: 'Quicksand', sans-serif;*/
+            font-size: 18px;
+        }
+
+        .displaydata {
+            display: none;
+        }
+        .input_filed{
+            height: 34px;
+            border-radius: 20px;
+            width: 100%;
+            padding-left: 10px;
+            font-size: 13px;
+            color: #979797;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border: 1px solid #8b0000;
+        }
+        #opinion{
+            font-size: 13px;
+            color: #979797;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border: 1px solid #8b0000;
+            border-radius: 7px;
+            padding: 10px;
+            line-height: 20px;
+        }
+
+        .sponsor{
+            margin-bottom:20px;
+        }
+
+        /* Customize file input */
+        .costom {
+          /* Hide default appearance */
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          /* Optional: Set custom background, border, and padding */
+          background-color: #fff;
+          border: 1px solid #8b0000;
+          padding: 0px 12px;
+          /* Optional: Add hover and focus effects */
+          transition: border-color 0.3s ease-in-out;
+          width: 100%;
+          font-size: 13px;
+          font-family: 'Quicksand', sans-serif;
+          height: 40px;
+          font-weight: 600;
+        }
+
+        /* Add focus effect */
+        .costom:focus {
+          outline: none;
+          border-color: #555;
+        }
+
+        select{
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          /* Some browsers will not display the caret when using calc, so we put the fallback first */
+          background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+          background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+        }
+        /*For IE*/
+        select::-ms-expand { display: none; }
+
+    </style>
+
+</head>
+
+<body>
+      <div class="preloader">
+            <img src="assets/images/IMG-20231205-WA0027.jpg" width="75"
+                  class="preloader__image" alt="Promote Local Leaders">
+      </div><!-- /.preloader -->
+      <div class="page-wrapper">
+            <header class="site-header-one stricky site-header-one__fixed-top">
+                  <div class="container-fluid">
+                        <a href="/">
+                              <div class="site-header-one__logo">
+                                    <div class="logo-size">
+                                          <img
+                                                src="assets/images/new_logo_(2).png"
+                                                alt="logo"
+                                                style="height: 8vh; object-fit: cover;">
+                                    </div>
+                              </div>
+                        </a>
+
+                        <!-- /.site-header-one__logo -->
+                        <div class="main-nav__main-navigation">
+                              <ul
+                                    class="main-nav__navigation-box one-page-scroll-menu">
+                                    <li class="scrollToLink"><a
+                                                href="/">Home</a></li>
+                                    <li class="scrollToLink"><a
+                                                href="pradhaantoday.html">Pradhaan
+                                                Today</a></li>
+                                                <li class="scrollToLink">
+                                                      <a href="voting.html">Voting</a>
+                                                </li>
+                                    <li class="scrollToLink"><a
+                                                href="pradhaanpledge.html">Pledge</a></li>
+                                    <li class="scrollToLink"><a
+                                                href="neuro.html">Neuro</a></li>
+                                    <li class="scrollToLink"><a
+                                                href="Mission.html">
+                                                Mission</a></li>
+                                    <li class="scrollToLink"><a
+                                                href="blog-details.html">Blog</a></li>
+                                    <li class="scrollToLink"><a
+                                                href="G20.html">G20</a></li>
+                                    <li class="scrollToLink"><a
+                                                href="sponsor.html">Sponsors</a></li>
+                              </ul>
+                              <!-- /.main-nav__navigation-box -->
+                        </div>
+                        <!-- /.main-nav__main-navigation -->
+
+                       
+
+                        <div class="main-nav__right">
+                              <a
+                                    href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+                                    class="thm-btn main-nav__btn-two"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span>Download App</span>
+                              </a>
+                        </div>
+                         <div class="menu__toggler_header">
+                              <span class="side-menu__toggler"><i
+                                          class="fa fa-bars"></i></span>
+                        </div>
+                        <!-- /.main-nav__right -->
+                  </div>
+                  <!-- /.container-fluid -->
+            </header><!-- /.site-header-one -->
+            <div>
+                  <div style="text-align: center; margin-top: 130px;">
+                        <h1 style="margin-bottom: 20px;" class="head">Neuro</h1>
+                        <p style="color: black; font-size:30px ;">
+
+                              <div class="container">
+                                    <p class="headline">
+                                          Neuro is a piece of your mind and
+                                          scent of your heart. It’s your own
+                                          opinion or observation card, to be
+                                          shared among your friends, colleagues
+                                          and neighborhood.
+                                          So, lets Join Pradhaan in making some
+                                          noise about issues that matters to
+                                          you. And speak out about events that
+                                          demands your attention and attention
+                                          of people around you.
+                                    </p>
+                              </div>
+                        </div>
+                        <div class="container">
+                              <div class="sponsor d-f sponsor1">
+                                    <section class="tab" id="sponsor">
+                                          <div class="sponsorsub">
+                                                <div class="sponsor-form">
+                                                      <form
+                                                            id="organization-details-form"
+                                                            class="submit-form">
+                                                            <div>
+                                                                  <label
+                                                                        for="name">Name<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <input
+                                                                        type="text"
+                                                                        id="nameInput"
+                                                                        placeholder="Enter Your Name"
+                                                                        style="border-radius: 20px;"
+                                                                        class='w-full input_filed' /><br />
+                                                            </div>
+                                                            <div>
+                                                                  <label
+                                                                        for="photo">User
+                                                                        Profile</label>
+                                                                  <input
+                                                                        type="file"
+                                                                        class="costom"
+                                                                        id="imgInput1"
+                                                                        style="border-radius: 6.25rem;"
+                                                                        accept="image/*" /><br />
+                                                            </div>
+                                                            <div>
+                                                                  <label>Select
+                                                                        State<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <select
+                                                                        id="stateSelect"
+                                                                        class='w-full input_filed'>
+                                                                        <option
+                                                                              value>Select
+                                                                              State</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div>
+                                                                  <label>Select
+                                                                        City<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <select
+                                                                        id="citySelect"
+                                                                        class='w-full input_filed'>
+                                                                        <option
+                                                                              value>Select
+                                                                              City</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div>
+                                                                  <label>Select
+                                                                        Ward</label>
+                                                                  <select
+                                                                        id="wardSelect"
+                                                                        class='w-full input_filed'>
+                                                                        <option
+                                                                              value>Select
+                                                                              Ward</option>
+                                                                  </select>
+                                                            </div>
+
+                                                            <div>
+                                                                  <label
+                                                                        for="photo">Designation<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <input
+                                                                        type="text"
+                                                                        id="designationInput"
+                                                                        placeholder="Enter Your Designation"
+                                                                        class='w-full input_filed'
+                                                                        style="border-radius: 20px;" /><br />
+                                                            </div>
+
+                                                            <div>
+                                                                  <label
+                                                                        for="photo">Picture</label>
+                                                                  <input
+                                                                        type="file"
+                                                                        class="costom"
+                                                                        id="imgInput2"
+                                                                        style="border-radius: 6.25rem;"
+                                                                        accept="image/*" /><br />
+                                                            </div>
+                                                            <div>
+                                                                  <label
+                                                                        for="photo">Subject<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <input
+                                                                        type="text"
+                                                                        id="subject"
+                                                                        placeholder="Enter Subject five or seven words"
+                                                                        class='w-full input_filed'
+                                                                        style="border-radius: 20px;" /><br />
+                                                            </div>
+
+                                                            <div>
+                                                                  <label
+                                                                        for="opinion">Opinion<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <textarea
+                                                                        id="opinion"
+                                                                        placeholder="Enter your opinion (less than fifteen words)"
+                                                                        class="w-full "
+                                                                        style="width: 100%;"></textarea>
+                                                                  <br />
+                                                            </div>
+
+                                                            <div>
+                                                                  <label
+                                                                        for="photo">Upload
+                                                                        Signature</label>
+                                                                  <input
+                                                                        type="file"
+                                                                        class="costom"
+                                                                        style="border-radius: 6.25rem;"
+                                                                        id="imgInput3"
+                                                                        accept="image/*" /><br />
+                                                            </div>
+                                                            <div>
+                                                                  <button
+                                                                        style="margin: auto; margin-top: 20px;"
+                                                                        class="thm-btn banner-one__btn"
+                                                                        id="downloadButton"><span>Download</span></button>
+                                                            </div>
+
+                                                      </form>
+                                                </div>
+                                          </div>
+                                    </section>
+                              </div>
+                        </div>
+                  </div>
+
+                  <div id="footer-placeholder"></div>
+                  <script>
+        // Fetch the footer.html file and insert its content into the placeholder
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+            </div><!-- /.page-wrapper -->
+            <a href="#" data-target="html"
+                  class="scroll-to-target scroll-to-top"><i
+                        class="fa fa-angle-up"></i></a>
+            <div class="side-menu__block">
+                  <div class="side-menu__block-overlay custom-cursor__overlay">
+                        <div class="cursor"></div>
+                        <div class="cursor-follower"></div>
+                  </div><!-- /.side-menu__block-overlay -->
+                  <div class="side-menu__block-inner ">
+                        <div class="side-menu__top justify-content-end">
+
+                              <a href="#"
+                                    class="side-menu__toggler side-menu__close-btn"><img
+                                          src="assets/images/shapes/close-1-1.png"
+                                          alt="Empowering Local Leadership"></a>
+                        </div><!-- /.side-menu__top -->
+
+                        <nav class="mobile-nav__container">
+                              <!-- content is loading via js -->
+                        </nav>
+                        <div
+                              class="side-menu__sep"></div><!-- /.side-menu__sep -->
+                        <div class="side-menu__content">
+                              <div class="main-nav__right">
+                                    <!-- <a
+                                          href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+                                          class="thm-btn main-nav__btn-two"
+                                          target="_blank"
+                                          rel="noopener noreferrer">
+                                          <span>Download App</span>
+                                    </a> -->
+                              </div>
+                              <!--<p><a href="mailto:needhelp@apton.com">needhelp@apton.com</a> <br> <a href="tel:888-999-0000">888 999-->
+                              <!--        0000</a></p>-->
+                              <div class="side-menu__social">
+                                    <a target="_blank" href="https://www.facebook.com/people/Pradhaan-India/61556919577490/?mibextid=ZbWKwL"><i class="fa-brands fa-square-facebook"></i></a>
+
+                                    <a   target="_blank" href="https://x.com/PradhaanIndia?t=qjUaPfV2pXryeFyK1C4__w&amp;s=09"><i class="fa-brands fa-square-twitter"></i></a>
+
+                                    <a target="_blank" href="https://www.instagram.com/pradhaanindia/?utm_source=qr&amp;igsh=MXIxbWZ3MnhmdTV1Zw%3D%3D"><i class="fa-brands fa-square-instagram"></i></a>
+
+                                    <a  target="_blank" href="https://www.pinterest.com/pradhaanindia/"><i class="fa-brands fa-square-pinterest"></i></a>
+
+                              </div>
+                        </div><!-- /.side-menu__content -->
+                  </div><!-- /.side-menu__block-inner -->
+            </div><!-- /.side-menu__block -->
+
+            <script src="assets/js/jquery-3.5.0.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/js/bootstrap-select.min.js"></script>
+            <script src="assets/js/bootstrap-datepicker.min.js"></script>
+            <script src="assets/js/isotope.js"></script>
+            <script src="assets/js/jquery.easing.min.js"></script>
+            <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+            <script src="assets/js/jquery.waypoints.min.js"></script>
+            <script src="assets/js/jquery.counterup.min.js"></script>
+            <script src="assets/js/jquery.magnific-popup.min.js"></script>
+            <script src="assets/js/jquery.validate.min.js"></script>
+            <script src="assets/js/owl.carousel.min.js"></script>
+            <script src="assets/js/TweenMax.min.js"></script>
+            <script src="assets/js/swiper.min.js"></script>
+            <script src="assets/js/wow.js"></script>
+            <script src="assets/js/theme.js"></script>
+
+            <!-- Firebase JavaScript SDK -->
+            <script
+                  src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+            <script
+                  src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+            <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCN2Q-jQqFJUzpHohPD16CJV4LwKg6nvf8",
+            authDomain: "chunaw-a66df.firebaseapp.com",
+            projectId: "chunaw-a66df",
+            storageBucket: "chunaw-a66df.appspot.com",
+            messagingSenderId: "379389559599",
+            appId: "1:379389559599:web:e3788d2d8872cf629d17da"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        // Function to fetch states based on the selected country
+        async function fetchStates() {
+            var selectedCountry = '1-India'; // Assuming the default country is India
+            var statesCollection = db.collection('location').doc(selectedCountry).collection('State');
+            var statesSnapshot = await statesCollection.get();
+            var statesSelect = document.getElementById('stateSelect');
+
+            statesSnapshot.forEach(function (doc) {
+                var option = document.createElement('option');
+                option.value = doc.id;
+                option.textContent = doc.id;
+                statesSelect.appendChild(option);
+            });
+        }
+
+        // Function to fetch cities based on the selected state
+        async function fetchCities() {
+            var selectedCountry = '1-India'; // Assuming the default country is India
+            var selectedState = document.getElementById('stateSelect').value;
+            var citiesCollection = db.collection('location').doc(selectedCountry).collection('State').doc(selectedState).collection('city');
+            var citiesSnapshot = await citiesCollection.get();
+            var citySelect = document.getElementById('citySelect');
+            citySelect.innerHTML = '<option value="">Select City</option>';
+
+            citiesSnapshot.forEach(function (doc) {
+                var option = document.createElement('option');
+                option.value = doc.id;
+                option.textContent = doc.id;
+                citySelect.appendChild(option);
+            });
+        }
+        // Function to toggle visibility of signature upload field based on checkbox state
+        window.onload = function () {
+            // Hide additional fields by default
+            document.getElementById("nameInputcheck").style.display = "none";
+            document.getElementById("SampleInputcheck").style.display = "none";
+            document.getElementById("signatureUpload").style.display = "none";
+        };
+
+        // function toggleSignatureUpload() {
+        //     var checkbox = document.getElementById("signatureCheckbox");
+        //     var nameInputcheck = document.getElementById("nameInputcheck");
+        //     var SampleInputcheck = document.getElementById("SampleInputcheck");
+        //     var signatureUpload = document.getElementById("signatureUpload");
+
+        //     if (checkbox.checked) {
+        //         signatureUpload.style.display = "block";
+        //         SampleInputcheck.style.display = "block";
+        //         nameInputcheck.style.display = "block";
+        //     } else {
+        //         signatureUpload.style.display = "none";
+        //         SampleInputcheck.style.display = "none";
+        //         nameInputcheck.style.display = "none";
+        //     }
+        // }
+
+
+
+        // Function to fetch wards based on the selected city
+        async function fetchWards() {
+            var selectedCountry = '1-India'; // Assuming the default country is India
+            var selectedState = document.getElementById('stateSelect').value;
+            var selectedCity = document.getElementById('citySelect').value;
+            var wardsCollection = db.collection('location').doc(selectedCountry).collection('State').doc(selectedState).collection('city').doc(selectedCity).collection('postal');
+            var wardsSnapshot = await wardsCollection.get();
+            var wardSelect = document.getElementById('wardSelect');
+            wardSelect.innerHTML = '<option value="">Select Ward</option>';
+
+            wardsSnapshot.forEach(function (doc) {
+                var option = document.createElement('option');
+                option.value = doc.id;
+                option.textContent = doc.id;
+                wardSelect.appendChild(option);
+            });
+        }
+
+        // Event listeners for state and city selection
+        document.getElementById('stateSelect').addEventListener('change', function () {
+            fetchCities();
+        });
+
+        document.getElementById('citySelect').addEventListener('change', function () {
+            fetchWards();
+        });
+
+        // Function to compress image
+
+
+
+        // Event listener for the download button
+        document.getElementById('downloadButton').addEventListener('click', function (event) {
+            event.preventDefault();
+            // Get the selected values
+            var name = document.getElementById('nameInput').value;
+            // const userProfile = document.getElementById('user_profile').files[0];
+            var selectedState = document.getElementById('stateSelect').value;
+            var selectedCity = document.getElementById('citySelect').value;
+            var selectedWard = document.getElementById('wardSelect').value;
+            var designation = document.getElementById('designationInput').value;
+            // const picture = document.getElementById('picture').files[0];
+            var subject = document.getElementById('subject').value;
+            var opinion = document.getElementById('opinion').value;
+            // const signatureInput = document.getElementById('signatureInput').files[0];
+
+            // Get the current date
+              var currentDate = new Date();
+
+              // Format the current date to YYYY-MM-DD
+              var year = currentDate.getFullYear();
+              var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+              var day = ('0' + currentDate.getDate()).slice(-2);
+              var formattedDate = year + '-' + month + '-' + day;
+
+
+            if(name && selectedState && selectedCity && designation && subject && opinion && currentDate){
+                // Store the selected values in local storage to pass them to the certificate page
+                    localStorage.setItem('name', name);
+                    localStorage.setItem('selectedState', selectedState);
+                    localStorage.setItem('selectedCity', selectedCity);
+                    localStorage.setItem('selectedWard', selectedWard);
+                    localStorage.setItem('designation', designation);
+                    localStorage.setItem('subject', subject);
+                    localStorage.setItem('opinion', opinion);
+                    localStorage.setItem('currentDate', formattedDate);
+
+
+            function compressAndStoreImages(image, index) {
+                const MAX_WIDTH = 1920; // Adjust the width as needed
+                const MAX_HEIGHT = 1080; // Adjust the height as needed
+                const TARGET_SIZE = 1024 * 1024; // 1 MB
+
+                console.log("image.size",image);
+
+                if (image.size > TARGET_SIZE) {
+                    const blobURL = URL.createObjectURL(image);
+                    const img = new Image();
+                    img.src = blobURL;
+
+                    img.onload = () => {
+                        const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = newWidth;
+                        canvas.height = newHeight;
+                        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+                        let quality = 1.0; // Initial quality
+                        let compressedData;
+
+                        // Compress the image iteratively until its size is below the target size
+                        do {
+                            const imageData = canvas.toDataURL('image/jpeg', quality);
+                            const dataSize = imageData.length * 0.75; // Convert base64 to bytes
+                            quality -= 0.1; // Reduce quality
+                            compressedData = {
+                                name: `image_${index}`,
+                                data: imageData
+                            };
+                        } while (compressedData.data.length > TARGET_SIZE && quality > 0);
+
+                        localStorage.setItem(compressedData.name, compressedData.data);
+                        console.log(`Image ${index} compressed and stored.`);
+                    };
+                } else {
+                    // If image size is less than or equal to 1MB, store it directly without compression
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const imageData = event.target.result;
+                        const compressedData = {
+                            name: `image_${index}`,
+                            data: imageData
+                        };
+                        localStorage.setItem(compressedData.name, compressedData.data);
+                        console.log(`Image ${index} stored without compression.`);
+                    };
+                    reader.readAsDataURL(image);
+                }
+            }
+
+
+
+
+            function calculateSize(img, maxWidth, maxHeight) {
+                let width = img.width;
+                let height = img.height;
+
+                // calculate the width and height, constraining the proportions
+                if (width > height) {
+                    if (width > maxWidth) {
+                        height = Math.round((height * maxWidth) / width);
+                        width = maxWidth;
+                    }
+                } else {
+                    if (height > maxHeight) {
+                        width = Math.round((width * maxHeight) / height);
+                        height = maxHeight;
+                    }
+                }
+                return [width, height];
+            }
+
+            const imgInputs = document.querySelectorAll('.imgInput');
+            imgInputs.forEach((input, index) => {
+                input.addEventListener('change', event => {
+                    const file = event.target.files[0];
+                    compressAndStoreImages(file, index + 1);
+                });
+            });
+
+            console.log("event.target.files[0]",imgInputs.length);
+
+
+            // for (let i = 0; i < 3; i++) {
+            //     const file = document.getElementById(`imgInput${i + 1}`).files[0];
+            //     compressAndStoreImages(file, i + 1);
+            // }
+
+               for (let i = 0; i < 3; i++) {
+            const fileInput = document.getElementById(`imgInput${i + 1}`);
+            const file = fileInput ? fileInput.files[0] : null;
+            if (file) {
+                compressAndStoreImages(file, i + 1);
+            } else {
+                localStorage.setItem(`image_${i + 1}`, null);
+            }
+        }
+
+
+
+
+            if (!imgInputs.length) {
+                window.location.href = 'https://pradhaan.in/neuro_certificate.html';
+                clearInputFields();
+            }
+            else
+            {
+                alert('Please fill in all required fields.');
+            }
+
+        }
+            else
+            {
+                alert('Please fill in all required fields.');
+            }
+
+            });
+
+
+
+                function clearInputFields() {
+                    console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+            // Reset input values to empty strings
+            document.getElementById('stateSelect').value = '';
+            document.getElementById('citySelect').value = '';
+            document.getElementById('wardSelect').value = '';
+            document.getElementById('nameInput').value = '';
+            document.getElementById('imgInput1').value = null;
+            document.getElementById('designationInput').value = '';
+            document.getElementById('imgInput2').value = null;
+            document.getElementById('subject').value = '';
+            document.getElementById('opinion').value = '';
+            document.getElementById('imgInput3').value = null;
+        }
+
+
+
+            function readFileAsBase64(file) {
+                return new Promise((resolve, reject) => {
+                    if (!file) {
+                        resolve(''); // If file is null or undefined, resolve with an empty string
+                    } else {
+                        const reader = new FileReader();
+                        reader.onload = () => resolve(reader.result.split(',')[1]); // Extract base64 data from result
+                        reader.onerror = reject;
+                        reader.readAsDataURL(file);
+                    }
+                });
+        }
+
+        fetchStates();
+
+
+        // Function to validate character count
+        function validateCharacterCount(inputElement, maxCharacters) {
+            inputElement.addEventListener("input", function() {
+                // Get the value of the input
+                var value = this.value.trim();
+
+                // If the character count exceeds the maximum allowed, truncate the input value
+                if (value.length > maxCharacters) {
+                    this.value = value.slice(0, maxCharacters); // Limit the input to maxCharacters characters
+                }
+            });
+        }
+
+        // Apply validation to each input field
+        validateCharacterCount(document.getElementById("subject"), 60); // Apply to Subject input field
+        validateCharacterCount(document.getElementById("opinion"), 250); // Apply to Description input field nameInput designation
+        validateCharacterCount(document.getElementById("nameInput"), 15); // Apply to Subject input field
+        validateCharacterCount(document.getElementById("designationInput"), 15); // Apply to Subject input field
+        // Add more input fields as needed
+
+
+
+
+    </script>
+
+      </body>
+
+</html>

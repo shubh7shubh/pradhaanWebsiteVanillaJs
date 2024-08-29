@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradhaan</title>
+    <!-- favicon -->
+    <link rel="IMG-20231205-WA0027" sizes="180x180" href="assets/images/favicons/IMG-20231205-WA0027.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/logo4.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/logo3.jpg">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <!-- plugin scripts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/apton-icons.css">
+
+    <!-- theme styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .certificate {
+            margin-top: 5%;
+            background-image: url("assets/images/certificate 19 - 011.png");
+            background-size: 100% 100%;
+            width: 140vh;
+            height: 90vh;
+            background-repeat: no-repeat;
+
+        }
+
+        .set2 {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .pho {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            z-index: 1000;
+            top: 44%;
+            right: 42.61%;
+           
+            position: absolute;
+        }
+        .pho2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            z-index: 1000;
+            top:30%;
+            right: 30%;
+            bottom: 62.5%;
+            
+            position: absolute;
+        }
+        
+        .pho1 {
+               
+                z-index: 1000;
+                top: 93%;
+                right: 0%;
+                left: 64%;
+                bottom: 0%;
+                position: absolute;
+
+            }
+
+        .dir {
+           
+            margin-left: 25%;
+            margin-right: 4%;
+            margin-top: 32%;
+            z-index: 1000;
+            top:28%;
+            right: 18%;
+            left: 7%;
+            bottom: 8%;
+            position: absolute;
+        }
+
+        #imageContainer img {
+            max-width: 100%;
+            /* Ensure the image doesn't exceed the container width */
+            max-height: 260px;
+            background-size: 100% 100%;
+            /* Set maximum height as needed */
+            /* Add border for styling */
+            border-radius: 5px;
+            /* Add border radius for rounded corners */
+            margin-top: 37%;
+            margin-left: -7%;
+            border: 2px solid black;
+            /* Adjust top margin for spacing */
+            height: 70%;
+            width: 90%;
+
+        }
+
+        .nameh1 {
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 38px;
+            text-align: center;
+            padding-top: 0%;
+            width: 75%;
+            margin-top: 26.5%;
+            margin-left: 15%;
+            
+
+        }
+        .nameh2 {
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 0%;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 7%;
+            margin-left: 35%; 
+            margin-top: 18%;
+        }
+
+        .votingpledge {
+
+            color: #8b0000;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 70px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 8%;
+        }
+
+        .pradhaanhead {
+            color: #8b0000;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .namecon {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .bodycon {
+            width: 35%;
+            margin-left: 20%;
+            height: 20%;
+            margin-top: 5%;
+            z-index: 1000;
+            top: 42%;
+            right: 26%;
+            left: 12.5%;
+            position: absolute;
+        }
+
+        .bodydata {
+            font-size: 40px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .subtitel {
+            color: #8b0000;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 26px;
+        }
+
+        .loc {
+            font-size: 24px;
+            color: black;
+        }
+        .circular-image {
+            width: 100px;
+            height: 100px;
+        
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; 
+           
+            border-radius: 50%; /* This creates the circular shape */
+            overflow: hidden; /* This ensures the image is clipped to the circular shape */
+        }
+        .circular-image2 {
+            width: 80px;
+            height: 80px;
+            
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; 
+           
+            border-radius: 50%; /* This creates the circular shape */
+            overflow: hidden; /* This ensures the image is clipped to the circular shape */
+        }
+        .circular-image2 img {
+        width: 115px !important;
+        height: auto;
+
+    }
+        
+        .circular-image10 {
+            width: 200px;
+            height: 52px;
+           
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; 
+           
+            border-radius: 2%; /* This creates the circular shape */
+            overflow: hidden; /* This ensures the image is clipped to the circular shape */
+        }
+
+        .circular-image img {
+            width: 125px !important; /* Make the image fill the circular container */
+            height: auto; /* Maintain aspect ratio */
+        }
+        p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+       
+
+        @media screen and (max-width:600px) and (orientation:portrait) {
+            .certificate {
+                margin-top: 5%;
+                background-image: url("assets/images/16.png");
+                background-size: 100%;
+                width: 140vh;
+                height: 90vh;
+                background-repeat: no-repeat;
+
+            }
+
+            .votingpledge {
+
+                color: #8b0000;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 34px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 8%;
+                margin-left: 5%;
+            }
+
+            .pradhaanhead {
+                color: #8b0000;
+                font-family: 'Times New Roman', Times, serif;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                font-size: 10px;
+                margin-top: -3%;
+
+
+            }
+
+            .namecon {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .nameh1 {
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                text-align: center;
+            
+            width: 71%;
+            margin-top: 31%;
+            margin-left: 6%;
+           
+        }
+        .nameh2 {
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 8px;
+            text-align: center;
+            padding-top: 0%;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 2%;
+            margin-left: 31%; 
+            margin-top: 18.5%;
+            
+            
+        }
+
+            .dir {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 20%;
+                margin-right: 4%;
+                margin-top: 40%;
+                z-index: 1000;
+                top: 12%;
+                right: 2%;
+                left: 4%;
+                bottom: 63%;
+                position: absolute;
+                
+            }
+
+            .subtitel {
+                color: #8b0000;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 10px;
+
+            }
+
+            .par {
+                margin-bottom: -75%;
+                margin-top: 44px;
+            }
+         
+
+            .set2 {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .pho {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                z-index: 1000;
+                top: 18%;
+                right: 6%;
+                left: 47%;
+                bottom: 50%;
+                position: absolute;
+               
+               
+
+            }
+            .pho1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                z-index: 1000;
+                top: 36.2%;
+              
+                left:70%;
+                position: absolute;
+                
+            }
+            .pho2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            z-index: 1000;
+            top:82%;
+            right: 37%;
+           
+           
+            position: absolute;
+        }
+
+            #imageContainer img {
+                max-width: 100%;
+                /* Ensure the image doesn't exceed the container width */
+                max-height: 260px;
+                background-size: 100% 100%;
+                /* Set maximum height as needed */
+                /* Add border for styling */
+                border-radius: 5px;
+                /* Add border radius for rounded corners */
+                margin-top: 37%;
+                margin-left: 27%;
+                border: 2px solid black;
+                /* Adjust top margin for spacing */
+                height: 24%;
+                width: 80%;
+
+            }
+            #signatureContainer img{
+                max-width: 100%;
+                /* Ensure the image doesn't exceed the container width */
+                max-height: 260px;
+                background-size: 100% 100%;
+                /* Set maximum height as needed */
+                /* Add border for styling */
+                border-radius: 5px;
+                /* Add border radius for rounded corners */
+                margin-top: 37%;
+                margin-left: 27%;
+                border: 2px solid black;
+                /* Adjust top margin for spacing */
+                height: 24%;
+                width: 80%;
+            }
+
+            .bodycon {
+                width: 60%;
+                margin-left: 16%;
+                height: 10%;
+                margin-top: 5%;
+                z-index: 1000;
+                top: 15%;
+                right: 27%;
+                left: 5%;
+                position: absolute;
+                text-align: center;
+
+            }
+            body{
+                font-size: 8px;
+            }
+
+            .bodydata {
+                font-size: 16px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+            .loc {
+                font-size: 12px;
+                color: black;
+            }
+            .signname{
+                font-size: 20px;
+            }
+            .circular-image {
+            width: 58px;
+            height: 58px;
+           
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; 
+           
+            border-radius: 50%; /* This creates the circular shape */
+            overflow: hidden; /* This ensures the image is clipped to the circular shape */
+        }
+        .circular-image2 {
+            width: 40px;
+            height: 40px;
+
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; 
+           
+            border-radius: 50%; /* This creates the circular shape */
+            overflow: hidden; /* This ensures the image is clipped to the circular shape */
+        }
+          .circular-image2  img {
+        width: 40px !important;
+         border-radius: 50%;
+        height: auto;
+    }
+        .circular-image10 {
+            width: 100px;
+            height: 30px;
+           
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center;
+            border-radius: 2%; /* This creates the circular shape */
+            overflow: hidden; /* This ensures the image is clipped to the circular shape */
+        }
+            .circular-image10  img {
+        width: 80px !important;
+        
+        height: auto;
+    }
+
+        .circular-image img {
+            width: 58px !important; /* Make the image fill the circular container */
+            height: auto; /* Maintain aspect ratio */
+            border-radius:50%;}
+            .move{
+               z-index:1000;
+               top:20%;
+               bottom:200%;
+            }
+       
+            
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <header class="site-header-one stricky site-header-one__fixed-top">
+      <div class="container-fluid">
+         <a href="/">
+        <div class="site-header-one__logo">
+         <div class="logo-size">
+              <img  src="assets/images/new_logo_(2).png" alt="logo" style="height: 8vh; object-fit: cover;">
+          </div>
+        </div>
+        </a>
+        
+        
+        <!-- /.site-header-one__logo -->
+        <div class="main-nav__main-navigation">
+          <ul class="main-nav__navigation-box one-page-scroll-menu">
+            <li class="scrollToLink"><a href="/">Home</a></li>
+            <li class="scrollToLink"><a href="pradhaantoday.html">Pradhaan Today</a></li>
+            <li class="scrollToLink">
+                <a href="voting.html">Voting</a>
+          </li>
+            <li class="scrollToLink"><a href="pradhaanpledge.html">Pledge</a></li>
+            <li class="scrollToLink"><a href="neuro.html">Neuro</a></li>
+            <li class="scrollToLink"><a href="Mission.html"> Mission</a></li>
+            <li class="scrollToLink"><a href="blog-details.html">Blog</a></li>
+            <li class="scrollToLink"><a href="G20.html">G20</a></li>
+            <li class="scrollToLink"><a href="sponsor.html">Sponsors</a></li>
+          </ul>
+          <!-- /.main-nav__navigation-box -->
+        </div>
+        <!-- /.main-nav__main-navigation -->
+        
+         <div class="menu__toggler_header">
+                <span class="side-menu__toggler"><i class="fa fa-bars"></i></span>
+           </div>
+        
+        <div class="main-nav__right">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+            class="thm-btn main-nav__btn-two"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Download App</span>
+          </a>
+        </div>
+        <!-- /.main-nav__right -->
+      </div>
+      <!-- /.container-fluid -->
+    </header><!-- /.site-header-one -->
+    <br/><br/>
+    <div class="set2" >
+        <div class="certificate">
+            
+            <div class="pho circular-image">
+                <div id="fileImageContainer"></div>
+            </div>
+            <h1 class="namecon"><span id="nameSpan" class="nameh1"></span></h1>
+           
+            <div class="bodycon" style="margin-top: 15%; display: flex; flex-direction: row;">
+               
+                <div class="pho2 circular-image2">
+                    <div id="sampleImageContainer"></div>
+                </div>
+               
+               
+            </div>
+            <h1 id="nameSpan2" class="nameh2" style=""></h1>
+            
+          
+
+            <div class="dir">
+                <div>
+                    <p class="par"><span id="wardSpan" class="subtitel"></span></p>
+                    <p class="par"><span id="districtSpan" class="subtitel"></span></p>
+                    
+                </div>
+                
+            </div>
+           
+           
+                <div class="pho1 circular-image10">
+                    <div id="signatureImageContainer"></div>
+                </div>
+            
+        </div>
+        
+    </div>
+    <div>
+         <button id="downloadCertificate" class="move">Download Certificate</button>
+    </div>
+   
+      <div id="footer-placeholder"></div>
+      <script>
+        // Fetch the footer.html file and insert its content into the placeholder
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script>
+        const name = localStorage.getItem('name');
+        const name2 = localStorage.getItem('name2');
+        const ward = localStorage.getItem('selectedWard');
+        const district = localStorage.getItem('selectedCity');
+        const state = localStorage.getItem('selectedState');
+        const fileImageData = localStorage.getItem('fileData');
+        const sampleImageData = localStorage.getItem('sampleData');
+        const signatureImageData = localStorage.getItem('signatureData');
+        const signatureName = localStorage.getItem('signatureName');
+
+        // Set the retrieved data to the corresponding elements
+        document.getElementById('nameSpan').textContent = name || 'Name not provided';
+        document.getElementById('wardSpan').textContent =  ward ? ward.replace(/^\d+-/, '') : 'Ward not provided';
+        document.getElementById('districtSpan').textContent =district ? district.replace(/^\d+-/, '') : 'District not provided';
+        document.getElementById('nameSpan2').textContent = name2 || 'Name not provided';
+        
+
+        // Display uploaded images
+        displayImage('fileImageContainer', fileImageData);
+        displayImage('sampleImageContainer', sampleImageData);
+        displayImage('signatureImageContainer', signatureImageData); // Corrected here
+        // Add more calls to displayImage function for additional images if needed
+
+        function displayImage(containerId, imageData) {
+            const container = document.getElementById(containerId);
+            if (imageData) {
+                const img = document.createElement('img');
+                img.src = "data:image/png;base64," + imageData;
+                img.style.width = "100px"; // Adjust size as needed
+                img.style.height = "auto"; // Maintain aspect ratio
+                container.appendChild(img);
+            } else {
+                container.textContent = 'Image not provided';
+            }
+        }
+        
+        //     window.addEventListener('beforeunload', function () {
+        //     localStorage.clear();
+        // });
+         function downloadCertificateAsImage() {
+            // Use html2canvas to capture the content of the .certificate container
+            html2canvas(document.querySelector('.certificate'), {
+                onrendered: function(canvas) {
+                    // Convert the canvas to a data URL representing the image
+                    const imageData = canvas.toDataURL('image/png');
+
+                    // Create a temporary anchor element
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = imageData;
+                    downloadLink.download = 'certificate.png'; // Set the file name for download
+                    downloadLink.click(); // Simulate click to trigger download
+                }
+            });
+        }
+        async function shareCertificateImage() {
+    // Get the certificate container element
+    const certificateContainer = document.querySelector('.certificate');
+    console.log('Certificate Container:', certificateContainer);
+
+    // Check if the certificate container is found
+    if (!certificateContainer) {
+        console.error('Certificate container not found');
+        return;
+    }
+
+    // Use html2canvas to capture the content of the .certificate container
+    const canvas = await html2canvas(certificateContainer);
+
+    // Convert the canvas content to a data URL representing the image
+    const imageData = canvas.toDataURL('image/png');
+
+    // Upload the image data to the server (you'll need to implement this part)
+    const imageUrl = await uploadImageToServer(imageData);
+
+    // Check if image upload was successful
+    if (imageUrl) {
+        // Share image URL using Web Share API
+        if (navigator.share) {
+            const shareData = {
+                title: 'Certificate',
+                text: 'Check out my certificate!',
+                url: imageUrl
+            };
+            await navigator.share(shareData);
+        } else {
+            console.error('Web Share API not supported');
+        }
+    } else {
+        console.error('Failed to upload image to server');
+    }
+}
+
+// Function to upload image data to the server
+
+
+
+
+
+
+        // Add click event listener to the download button
+        document.getElementById('downloadCertificate').addEventListener('click', downloadCertificateAsImage);
+
+    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</body>
+</html>

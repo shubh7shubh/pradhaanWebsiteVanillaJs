@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradhaan</title>
+    <!-- favicon -->
+    <link rel="IMG-20231205-WA0027" sizes="180x180" href="assets/images/favicons/IMG-20231205-WA0027.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/logo4.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/logo3.jpg">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <!-- plugin scripts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/apton-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- theme styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <style>
+    .set2 {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+    .certificate {
+        position: relative;
+        margin-top: 5%;
+        background-size: contain;
+        width: 100%;
+        background-repeat: no-repeat;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .certificate-bg {
+        width: 85%;
+        z-index: -1;
+    }
+    .certificate-bg>img {
+        display: block;
+        max-width: 100%;
+    }
+    .certificate-details {
+        padding-top: 2.5%;
+        position: absolute;
+        width: 80%;
+    }
+    .onestimageandname {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .onestimageandname>h1 {
+        margin-top: 1%;
+        font-size: 24px;
+        color: rgba(65, 74, 85, 1);
+    }
+    .onestimageandname>h6 {
+        font-size: 16px;
+        color: rgba(65, 74, 85, 1);
+    }
+    .address {
+        margin-top: 2%;
+    }
+    .thetexttoshow {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 !important;
+    }
+    .thetexttoshow>p {
+        font-size: clamp(.4rem, 2.4vw, 2.2rem);
+        margin: 0% !important;
+        color: rgba(65, 74, 85, 1);
+        font-weight: 600;
+    }
+    .thesecondphoto {
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .thesecondphoto>h1 {
+        font-size: 1rem;
+        color: #8b0000;
+    }
+    .requestedimage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 7vmax !important;
+        height: 7vmax !important;
+        margin: 0 !important;
+    }
+    .requestedimage img {
+        max-width: 100%;
+        display: block;
+        border-radius: 50%;
+        margin: 0% !important;
+    }
+    .pledgehead {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+    .pledgehead>h1 {
+        font-family: "Roboto Slab", serif;
+        color: rgba(152, 0, 0, 1);
+        font-size: clamp(.1rem, 4.2vw, 4rem);
+        letter-spacing: .4rem;
+        max-width: 80%;
+        font-weight: 700;
+    }
+    .pledgehead>h5 {
+        color: rgba(152, 0, 0, 1);
+        font-size: clamp(.5rem, 2.2vw, 2rem);
+        letter-spacing: .4rem;
+        max-width: 80%;
+    }
+    .userimage {
+        width: 10vmax;
+        height: 10vmax;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+    }
+    .userimage>img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        margin: 0 !important;
+        border-radius: 50%;
+    }
+    .address {
+        align-items: center;
+        margin-left: 24%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+    }
+    .signclass>h1 {
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #8b0000;
+    }
+    .signclass {
+        padding: 0% !important;
+    }
+    .signclass>div {
+        width: 100%;
+        height: 3.5vmax;
+        padding: 0% !important;
+        padding: 0% !important;
+    }
+    .signclass>div>img {
+        display: block;
+        max-width: 100%;
+        max-height: 100% !important;
+        width: 100%;
+        height: 100% !important;
+        margin-left: 9%;
+    }
+    .address1 {
+        margin-bottom: -5% !important;
+
+        color: #8b0000;
+    }
+    .onestimageandname>h1 {
+        font-size: clamp(.5rem, 3.2vw, 3rem);
+        margin-top: 1%;
+        max-width: 70%;
+        text-align: center;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 1);
+    }
+    .onestimageandname>h6 {
+        font-size: clamp(.5rem, 1.4vw, 1.2rem);
+        max-width: 70%;
+        text-align: center;
+        font-weight: 700;
+        color: #22222295;
+    }
+    .thesecondphoto>h1 {
+        font-size: clamp(.5rem, 2vw, 1.8rem);
+        font-weight: 600;
+        margin-top: 1%;
+    }
+    .address p {
+        font-size: clamp(.5rem, 2.2rem, 2rem);
+        margin-top: 10%;
+        font-weight: 600;
+    }
+    .address h1 {
+        font-size: clamp(.5rem, 2.2rem, 2rem);
+        margin-top: 5%;
+    }
+    
+    @media screen and (max-width:600px) {
+         .mar{
+            margin-left: -80%;
+        }
+        .pledgehead>h1 {
+            font-family: "Roboto Slab", serif;
+            color: rgba(152, 0, 0, 1);
+            font-size: clamp(.1rem, 4.2vw, 4rem);
+            letter-spacing: .4rem;
+            max-width: 80%;
+            font-weight: 700;
+            margin-top: 1.5%;
+        }
+        .onestimageandname>h6 {
+            margin-top: -2%;
+            font-size: clamp(.5rem, 1.4vw, 1.2rem);
+            max-width: 70%;
+            text-align: center;
+            font-weight: 700;
+            color: #22222295;
+        }
+        .certificate {
+            margin-top: 15%;
+        }
+        .certificate-details {
+            margin-left: 10%;
+            margin-top: -2.5%;
+        }
+        .address {
+            margin-top: -8%;
+        }
+        .main-nav__btn-two {
+            font-size: 10px;
+        }
+        .userimage {
+            width: 6vmax;
+            height: 6vmax;
+        }
+        .thetexttoshow {
+            margin-top: -5%;
+            padding: 0% !important;
+        }
+        .thetexttoshow>p {
+            margin: 0% !important;
+            height: 1vmax !important;
+        }
+        .requestedimage {
+            width: 3vmax !important;
+            height: 3vmax !important;
+        }
+        .address p {
+            font-size: .6rem;
+            margin-top: -35% !important;
+        }
+        .address p:first-child {
+            margin-top: 2% !important;
+        }
+        .signclass>div {
+            height: 1vmax !important;
+            width: 50%;
+            margin-left: 20%;
+        }
+        .address h1 {
+            font-size: .65rem !important;
+            text-align: center;
+        }
+    }
+    @media screen and (min-width:340) {
+        .pledgehead>h5 {
+        color: rgba(152, 0, 0, 1);
+        font-size: clamp(.5rem, 2.2vw, 2rem);
+        letter-spacing: .4rem;
+        max-width: 80%;
+        margin-top: 75% !important;
+    }
+    }
+    @media (min-width: 600px) and (max-width:1130px) {
+        .thetexttoshow {
+            
+        margin-top: 0%;
+        margin-bottom: 0%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 !important;
+    }
+    .thetexttoshow>p {
+        font-size: clamp(.4rem, 2.4vw, 2.2rem);
+        margin: -1% !important;
+        color: rgba(65, 74, 85, 1);
+        font-weight: 600;
+    }
+    .address p {
+        font-size: clamp(.5rem, 1rem, 2rem);
+        margin-top: -5%;
+        font-weight: 600;
+        
+    }
+    .address1 {
+        margin-bottom: -5% !important;
+       
+        color: #8b0000;
+    }
+    .address {
+        margin-top: -3%;
+    }
+    }
+</style>
+</head>
+
+
+<body>
+    <header class="site-header-one stricky site-header-one__fixed-top">
+      <div class="container-fluid">
+         <a href="/">
+        <div class="site-header-one__logo">
+          <div class="logo-size">
+              <img id="logo" src="assets/images/new logo (2).jpg" alt="logo" />
+            <h1 style="left: 52%;">radhaan</h1>
+          </div>
+          <p style="color: #737789;">Your Place. Your Voice. Your Leadership</p>
+          <span class="side-menu__toggler"><i class="fa fa-bars"></i></span
+          ><!-- /.side-menu__toggler -->
+        </div>
+        </a>
+        
+        
+        <!-- /.site-header-one__logo -->
+        <div class="main-nav__main-navigation">
+          <ul class="main-nav__navigation-box one-page-scroll-menu">
+            <li class="scrollToLink"><a href="/">Home</a></li>
+            <li class="scrollToLink"><a href="pradhaantoday.html">Pradhaan Today</a></li>
+            <li class="scrollToLink"><a href="pradhaanpledge.html">Pledge</a></li>
+            <li class="scrollToLink"><a href="neuro.html">Neuro</a></li>
+            <li class="scrollToLink"><a href="Mission.html"> Mission</a></li>
+            <li class="scrollToLink"><a href="blog-details.html">Blog</a></li>
+            <li class="scrollToLink"><a href="G20.html">G20</a></li>
+            <li class="scrollToLink"><a href="sponsor.html">Sponsors</a></li>
+          </ul>
+          <!-- /.main-nav__navigation-box -->
+        </div>
+        <!-- /.main-nav__main-navigation -->
+        <div class="main-nav__right">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+            class="thm-btn main-nav__btn-two"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Download App</span>
+          </a>
+        </div>
+        <!-- /.main-nav__right -->
+      </div>
+      <!-- /.container-fluid -->
+    </header><!-- /.site-header-one -->
+    <br /><br />
+    <div class="set2">
+        <div class="certificate">
+            <div class="certificate-bg">
+                <img src="assets/images/certificateblank.png" />
+            </div>
+            <div class="certificate-details">
+                <div class="pledgehead">
+                    <h1>VOTING PLEDGE</h1>
+                    <h5>PRADHAAN</h5>
+                </div>
+
+
+                <div class="onestimageandname">
+                    <div id="fileImageContainer" class="userimage"></div>
+                    <h1><span id="nameSpan"></span></h1>
+                    <h6><span id="designationSpan"></span></h6>
+                </div>
+                <div class="thetexttoshow">
+                    <p>I Solemnly pledge to vote in election 2024</p>
+                </div>
+
+
+
+                <div class="thesecondphoto">
+                    <div id="sampleImageContainer" class="requestedimage"></div>
+                    <h1 id="nameSpan2"></h1>
+
+                </div>
+
+
+
+
+
+
+                <div class="address">
+                    <div class="theadressdiv">
+                        <p class="address1"><span id="wardSpan"></span></p>
+                        <p class="address1"><span id="districtSpan"></span></p>
+
+                    </div>
+                     <div class="signclass">
+                    <div id="signatureImageContainer" class="signimage"></div>
+                    <h1 class="mar">Signature</h1>
+                </div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 2%;">
+        <button id="shareCertificate" class="thm-btn main-nav__btn-two" style="margin-right: 5%;"><span>Share
+                Certificate</span></button>
+        <button id="downloadCertificate" class="thm-btn main-nav__btn-two"><span>Download Certificate</span></button>
+    </div>
+    <footer class="site-footer">
+        <div class="site-footer__upper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="footer-widget footer-widget__about">
+
+                            <div class="logo-size">
+                                <a href="/" style="width: 80%;">
+                                    <img id="logo" src="assets/images/new logo (2).jpg" alt="logo">
+                                </a>
+                                <h1>radhaan</h1>
+                            </div>
+
+                            <p>Your Place. Your Voice. Your Leadership</p>
+                            <p> Login to App to make and hear voices <br>right from your ward, district and
+                                state.<br> Vote at the appand get the chance to<br> become Pradhaan of your area.
+                            </p>
+
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-lg-4 -->
+
+                    <div class="col-lg-5">
+                        <div class="footer-widget__links-wrap">
+                            <div class="footer-widget">
+                                <h3 class="footer-widget__title">Company</h3>
+                                <ul class="list-unstyled footer-widget__links-list">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Services</a></li>
+                                </ul><!-- /.list-unstyled footer-widget__links-list -->
+                            </div><!-- /.footer-widget -->
+                            <div class="footer-widget">
+                                <h3 class="footer-widget__title">Explore</h3>
+                                <ul class="list-unstyled footer-widget__links-list">
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Features</a></li>
+                                    <li><a href="#">Download</a></li>
+                                    <li><a href="#">Free Trial</a></li>
+                                </ul><!-- /.list-unstyled footer-widget__links-list -->
+                            </div><!-- /.footer-widget -->
+                            <div class="footer-widget">
+                                <h3 class="footer-widget__title">Links</h3>
+                                <ul class="list-unstyled footer-widget__links-list">
+                                    <li><a href="#">Help</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms of Use</a></li>
+                                    <li><a href="#">Services</a></li>
+                                </ul><!-- /.list-unstyled footer-widget__links-list -->
+                            </div><!-- /.footer-wzzzidget -->
+                        </div><!-- /.footer-widget__links-wrap -->
+                    </div><!-- /.col-lg-5 -->
+                    <div
+                        class="col-lg-3 d-flex align-items-center justify-content-xl-end justify-content-lg-end justify-content-md-center justify-content-sm-center">
+                        <div class="footer-widget">
+                            <div class="footer-widget__social">
+                                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div><!-- /.footer-widget__social -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-lg-3 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.site-footer__upper -->
+        <div class="site-footer__bottom">
+            <div class="container text-center">
+                <p>© copyright 2024 by Ioninks.com</p>
+            </div><!-- /.container -->
+        </div><!-- /.site-footer__bottom -->
+    </footer><!-- /.site-footer -->
+
+    <script>
+        const name = localStorage.getItem('name');
+        const name2 = localStorage.getItem('name2');
+        const designation = localStorage.getItem('designation');
+        const ward = localStorage.getItem('selectedWard');
+        const district = localStorage.getItem('selectedCity');
+        const state = localStorage.getItem('selectedState');
+        const fileImageData = localStorage.getItem('fileData');
+        const sampleImageData = localStorage.getItem('sampleData');
+        const signatureImageData = localStorage.getItem('signatureData');
+        const signatureName = localStorage.getItem('signatureName');
+
+        // Set the retrieved data to the corresponding elements
+        document.getElementById('nameSpan').textContent = name;
+        if (ward) {
+            const wardParts = ward.split('-');
+            const wardName = wardParts.length > 1 ? wardParts[1] : wardParts[0];
+            document.getElementById('wardSpan').textContent = wardName.trim();
+        }
+
+
+        if (district) {
+            const districtParts = district.split('-');
+            const districtName = districtParts.length > 1 ? districtParts[1] : districtParts[0];
+            document.getElementById('districtSpan').textContent = districtName.trim();
+        }
+
+
+        document.getElementById('nameSpan2').textContent = name2;
+        document.getElementById('designationSpan').textContent = designation;
+
+
+        // Display uploaded images
+        displayImage('fileImageContainer', fileImageData);
+        displayImage('sampleImageContainer', sampleImageData);
+        displayImage('signatureImageContainer', signatureImageData); // Corrected here
+        // Add more calls to displayImage function for additional images if needed
+
+        function displayImage(containerId, imageData) {
+            const container = document.getElementById(containerId);
+            if (imageData) {
+                const img = document.createElement('img');
+                img.src = "data:image/png;base64," + imageData;
+                img.style.width = "100px"; // Adjust size as needed
+                img.style.height = "auto"; // Maintain aspect ratio
+                img.style.borderRadius = "50%";
+                container.appendChild(img);
+            } else {
+                container.textContent = '';
+            }
+        }
+        function downloadCertificateAsImage() {
+    // Use html2canvas to capture the content of the .certificate container
+    html2canvas(document.querySelector('.certificate'), {
+        scale: 2, // Increase scale for higher resolution
+        onrendered: function (canvas) {
+            // Convert the canvas to a data URL representing the image
+            const imageData = canvas.toDataURL('image/jpeg', 0.8); // Adjust quality to 0.8
+
+            // Create a temporary anchor element
+            const downloadLink = document.createElement('a');
+            downloadLink.href = imageData;
+            downloadLink.download = 'certificate.jpg'; // Set the file name for download
+            
+            downloadLink.click(); // Simulate click to trigger download
+        }
+    });
+}
+
+
+        async function shareCertificateImage() {
+            // Get the certificate container element
+            const certificateContainer = document.querySelector('.certificate');
+            console.log('Certificate Container:', certificateContainer);
+
+            // Check if the certificate container is found
+            if (!certificateContainer) {
+                console.error('Certificate container not found');
+                return;
+            }
+
+            // Use html2canvas to capture the content of the .certificate container
+            const canvas = await html2canvas(certificateContainer);
+
+            // Convert the canvas content to a data URL representing the image
+            const imageData = canvas.toDataURL('image/png');
+
+            // Upload the image data to the server (you'll need to implement this part)
+            const imageUrl = await uploadImageToServer(imageData);
+
+            // Check if image upload was successful
+            if (imageUrl) {
+                // Share image URL using Web Share API
+                if (navigator.share) {
+                    const shareData = {
+                        title: 'Certificate',
+                        text: 'Check out my certificate!',
+                        url: imageUrl
+                    };
+                    await navigator.share(shareData);
+                } else {
+                    console.error('Web Share API not supported');
+                }
+            } else {
+                console.error('Failed to upload image to server');
+            }
+        }
+        window.addEventListener('beforeunload', function () {
+           // localStorage.clear();
+        });
+
+        // Function to upload image data to the server
+
+
+
+        
+
+
+        // Add click event listener to the download button
+        document.getElementById('downloadCertificate').addEventListener('click', downloadCertificateAsImage);
+        document.getElementById('shareCertificate').addEventListener('click', shareCertificateLink);
+
+        async function shareCertificateLink() {
+            try {
+                // Check if Web Share API is supported
+                if (navigator.share) {
+                    await navigator.share({<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradhaan</title>
+    <!-- favicon -->
+    <link rel="IMG-20231205-WA0027" sizes="180x180" href="assets/images/favicons/IMG-20231205-WA0027.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/logo4.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/logo3.jpg">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <!-- plugin scripts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/apton-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- theme styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <style>
+    .set2 {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+    .certificate {
+        position: relative;
+        margin-top: 5%;
+        background-size: contain;
+        width: 100%;
+        background-repeat: no-repeat;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .certificate-bg {
+        width: 85%;
+        z-index: -1;
+    }
+    .certificate-bg>img {
+        display: block;
+        max-width: 100%;
+    }
+    .certificate-details {
+        padding-top: 2.5%;
+        position: absolute;
+        width: 80%;
+    }
+    .onestimageandname {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .onestimageandname>h1 {
+        margin-top: 1%;
+        font-size: 24px;
+        color: rgba(65, 74, 85, 1);
+    }
+    .onestimageandname>h6 {
+        font-size: 16px;
+        color: rgba(65, 74, 85, 1);
+    }
+    .address {
+        margin-top: 2%;
+    }
+    .thetexttoshow {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 !important;
+    }
+    .thetexttoshow>p {
+        font-size: clamp(.4rem, 2.4vw, 2.2rem);
+        margin: 0% !important;
+        color: rgba(65, 74, 85, 1);
+        font-weight: 600;
+    }
+    .thesecondphoto {
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .thesecondphoto>h1 {
+        font-size: 1rem;
+        color: #8b0000;
+    }
+    .requestedimage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 7vmax !important;
+        height: 7vmax !important;
+        margin: 0 !important;
+    }
+    .requestedimage img {
+        max-width: 100%;
+        display: block;
+        border-radius: 50%;
+        margin: 0% !important;
+    }
+    .pledgehead {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+    .pledgehead>h1 {
+        font-family: "Roboto Slab", serif;
+        color: rgba(152, 0, 0, 1);
+        font-size: clamp(.1rem, 4.2vw, 4rem);
+        letter-spacing: .4rem;
+        max-width: 80%;
+        font-weight: 700;
+    }
+    .pledgehead>h5 {
+        color: rgba(152, 0, 0, 1);
+        font-size: clamp(.5rem, 2.2vw, 2rem);
+        letter-spacing: .4rem;
+        max-width: 80%;
+    }
+    .userimage {
+        width: 10vmax;
+        height: 10vmax;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+    }
+    .userimage>img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        margin: 0 !important;
+        border-radius: 50%;
+    }
+    .address {
+        align-items: center;
+        margin-left: 24%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+    }
+    .signclass>h1 {
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #8b0000;
+    }
+    .signclass {
+        padding: 0% !important;
+    }
+    .signclass>div {
+        width: 100%;
+        height: 3.5vmax;
+        padding: 0% !important;
+        padding: 0% !important;
+    }
+    .signclass>div>img {
+        display: block;
+        max-width: 100%;
+        max-height: 100% !important;
+        width: 100%;
+        height: 100% !important;
+        margin-left: 9%;
+    }
+    .address1 {
+        margin-bottom: -5% !important;
+
+        color: #8b0000;
+    }
+    .onestimageandname>h1 {
+        font-size: clamp(.5rem, 3.2vw, 3rem);
+        margin-top: 1%;
+        max-width: 70%;
+        text-align: center;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 1);
+    }
+    .onestimageandname>h6 {
+        font-size: clamp(.5rem, 1.4vw, 1.2rem);
+        max-width: 70%;
+        text-align: center;
+        font-weight: 700;
+        color: #22222295;
+    }
+    .thesecondphoto>h1 {
+        font-size: clamp(.5rem, 2vw, 1.8rem);
+        font-weight: 600;
+        margin-top: 1%;
+    }
+    .address p {
+        font-size: clamp(.5rem, 2.2rem, 2rem);
+        margin-top: 10%;
+        font-weight: 600;
+    }
+    .address h1 {
+        font-size: clamp(.5rem, 2.2rem, 2rem);
+        margin-top: 5%;
+    }
+    
+    @media screen and (max-width:600px) {
+         .mar{
+            margin-left: -80%;
+        }
+        .pledgehead>h1 {
+            font-family: "Roboto Slab", serif;
+            color: rgba(152, 0, 0, 1);
+            font-size: clamp(.1rem, 4.2vw, 4rem);
+            letter-spacing: .4rem;
+            max-width: 80%;
+            font-weight: 700;
+            margin-top: 1.5%;
+        }
+        .onestimageandname>h6 {
+            margin-top: -2%;
+            font-size: clamp(.5rem, 1.4vw, 1.2rem);
+            max-width: 70%;
+            text-align: center;
+            font-weight: 700;
+            color: #22222295;
+        }
+        .certificate {
+            margin-top: 15%;
+        }
+        .certificate-details {
+            margin-left: 10%;
+            margin-top: -2.5%;
+        }
+        .address {
+            margin-top: -8%;
+        }
+        .main-nav__btn-two {
+            font-size: 10px;
+        }
+        .userimage {
+            width: 6vmax;
+            height: 6vmax;
+        }
+        .thetexttoshow {
+            margin-top: -5%;
+            padding: 0% !important;
+        }
+        .thetexttoshow>p {
+            margin: 0% !important;
+            height: 1vmax !important;
+        }
+        .requestedimage {
+            width: 3vmax !important;
+            height: 3vmax !important;
+        }
+        .address p {
+            font-size: .6rem;
+            margin-top: -35% !important;
+        }
+        .address p:first-child {
+            margin-top: 2% !important;
+        }
+        .signclass>div {
+            height: 1vmax !important;
+            width: 50%;
+            margin-left: 20%;
+        }
+        .address h1 {
+            font-size: .65rem !important;
+            text-align: center;
+        }
+    }
+    @media screen and (min-width:340) {
+        .pledgehead>h5 {
+        color: rgba(152, 0, 0, 1);
+        font-size: clamp(.5rem, 2.2vw, 2rem);
+        letter-spacing: .4rem;
+        max-width: 80%;
+        margin-top: 75% !important;
+    }
+    }
+    @media (min-width: 600px) and (max-width:1130px) {
+        .thetexttoshow {
+            
+        margin-top: 0%;
+        margin-bottom: 0%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 !important;
+    }
+    .thetexttoshow>p {
+        font-size: clamp(.4rem, 2.4vw, 2.2rem);
+        margin: -1% !important;
+        color: rgba(65, 74, 85, 1);
+        font-weight: 600;
+    }
+    .address p {
+        font-size: clamp(.5rem, 1rem, 2rem);
+        margin-top: -5%;
+        font-weight: 600;
+        
+    }
+    .address1 {
+        margin-bottom: -5% !important;
+       
+        color: #8b0000;
+    }
+    .address {
+        margin-top: -3%;
+    }
+    }
+</style>
+</head>
+
+
+<body>
+    <header class="site-header-one stricky site-header-one__fixed-top">
+        <div class="container-fluid">
+            <div class="site-header-one__logo">
+                <div class="logo-size">
+                    <a href="/">
+                        <img id="logo" src="assets/images/new logo (2).jpg" alt="logo">
+                    </a>
+                    <h1>radhaan</h1>
+                </div>
+                <p>Your Place. Your Voice. Your Leadership</p>
+                <span class="side-menu__toggler"><i class="fa fa-bars"></i></span><!-- /.side-menu__toggler -->
+            </div><!-- /.site-header-one__logo -->
+            <div class="main-nav__main-navigation">
+                <ul class="main-nav__navigation-box one-page-scroll-menu">
+                    <li class="scrollToLink">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="scrollToLink"><a href="pradhaantoday.html">Pradhaan Today</a></li>
+                    <li class="scrollToLink"><a href="pradhaanpledge.html">Pledge</a></li>
+
+
+
+                    <li class="scrollToLink"><a href="Mission.html"> Mission</a></li>
+
+                    <li class="scrollToLink"><a href="Contact.html">Contact us</a></li>
+                </ul><!-- /.main-nav__navigation-box -->
+            </div><!-- /.main-nav__main-navigation -->
+            <div class="main-nav__right">
+                <a href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+                    class="thm-btn main-nav__btn-two" target="_blank" rel="noopener noreferrer">
+                    <span>Download App</span>
+                </a>
+            </div><!-- /.main-nav__right -->
+
+        </div><!-- /.container-fluid -->
+    </header><!-- /.site-header-one -->
+    <br /><br />
+    <div class="set2">
+        <div class="certificate">
+            <div class="certificate-bg">
+                <img src="assets/images/certificateblank.png" />
+            </div>
+            <div class="certificate-details">
+                <div class="pledgehead">
+                    <h1>VOTING PLEDGE</h1>
+                    <h5>PRADHAAN</h5>
+                </div>
+
+
+                <div class="onestimageandname">
+                    <div id="fileImageContainer" class="userimage"></div>
+                    <h1><span id="nameSpan"></span></h1>
+                    <h6><span id="designationSpan"></span></h6>
+                </div>
+                <div class="thetexttoshow">
+                    <p>I Solemnly pledge to vote in election 2024</p>
+                </div>
+
+
+
+                <div class="thesecondphoto">
+                    <div id="sampleImageContainer" class="requestedimage"></div>
+                    <h1 id="nameSpan2"></h1>
+
+                </div>
+
+
+
+
+
+
+                <div class="address">
+                    <div class="theadressdiv">
+                        <p class="address1"><span id="wardSpan"></span></p>
+                        <p class="address1"><span id="districtSpan"></span></p>
+
+                    </div>
+                     <div class="signclass">
+                    <div id="signatureImageContainer" class="signimage"></div>
+                    <h1 class="mar">Signature</h1>
+                </div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 2%;">
+        <button id="shareCertificate" class="thm-btn main-nav__btn-two" style="margin-right: 5%;"><span>Share
+                Certificate</span></button>
+        <button id="downloadCertificate" class="thm-btn main-nav__btn-two"><span>Download Certificate</span></button>
+    </div>
+    
+     <div id="footer-placeholder"></div>
+      <script>
+        // Fetch the footer.html file and insert its content into the placeholder
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script>
+        const name = localStorage.getItem('name');
+        const name2 = localStorage.getItem('name2');
+        const designation = localStorage.getItem('designation');
+        const ward = localStorage.getItem('selectedWard');
+        const district = localStorage.getItem('selectedCity');
+        const state = localStorage.getItem('selectedState');
+        const fileImageData = localStorage.getItem('fileData');
+        const sampleImageData = localStorage.getItem('sampleData');
+        const signatureImageData = localStorage.getItem('signatureData');
+        const signatureName = localStorage.getItem('signatureName');
+
+        // Set the retrieved data to the corresponding elements
+        document.getElementById('nameSpan').textContent = name;
+        if (ward) {
+            const wardParts = ward.split('-');
+            const wardName = wardParts.length > 1 ? wardParts[1] : wardParts[0];
+            document.getElementById('wardSpan').textContent = wardName.trim();
+        }
+
+
+        if (district) {
+            const districtParts = district.split('-');
+            const districtName = districtParts.length > 1 ? districtParts[1] : districtParts[0];
+            document.getElementById('districtSpan').textContent = districtName.trim();
+        }
+
+
+        document.getElementById('nameSpan2').textContent = name2;
+        document.getElementById('designationSpan').textContent = designation;
+
+
+        // Display uploaded images
+        displayImage('fileImageContainer', fileImageData);
+        displayImage('sampleImageContainer', sampleImageData);
+        displayImage('signatureImageContainer', signatureImageData); // Corrected here
+        // Add more calls to displayImage function for additional images if needed
+
+        function displayImage(containerId, imageData) {
+            const container = document.getElementById(containerId);
+            if (imageData) {
+                const img = document.createElement('img');
+                img.src = "data:image/png;base64," + imageData;
+                img.style.width = "100px"; // Adjust size as needed
+                img.style.height = "auto"; // Maintain aspect ratio
+                img.style.borderRadius = "50%";
+                container.appendChild(img);
+            } else {
+                container.textContent = '';
+            }
+        }
+        function downloadCertificateAsImage() {
+    // Use html2canvas to capture the content of the .certificate container
+    html2canvas(document.querySelector('.certificate'), {
+        scale: 2, // Increase scale for higher resolution
+        onrendered: function (canvas) {
+            // Convert the canvas to a data URL representing the image
+            const imageData = canvas.toDataURL('image/jpeg', 0.8); // Adjust quality to 0.8
+
+            // Create a temporary anchor element
+            const downloadLink = document.createElement('a');
+            downloadLink.href = imageData;
+            downloadLink.download = 'certificate.jpg'; // Set the file name for download
+            
+            downloadLink.click(); // Simulate click to trigger download
+        }
+    });
+}
+
+
+        async function shareCertificateImage() {
+            // Get the certificate container element
+            const certificateContainer = document.querySelector('.certificate');
+            console.log('Certificate Container:', certificateContainer);
+
+            // Check if the certificate container is found
+            if (!certificateContainer) {
+                console.error('Certificate container not found');
+                return;
+            }
+
+            // Use html2canvas to capture the content of the .certificate container
+            const canvas = await html2canvas(certificateContainer);
+
+            // Convert the canvas content to a data URL representing the image
+            const imageData = canvas.toDataURL('image/png');
+
+            // Upload the image data to the server (you'll need to implement this part)
+            const imageUrl = await uploadImageToServer(imageData);
+
+            // Check if image upload was successful
+            if (imageUrl) {
+                // Share image URL using Web Share API
+                if (navigator.share) {
+                    const shareData = {
+                        title: 'Certificate',
+                        text: 'Check out my certificate!',
+                        url: imageUrl
+                    };
+                    await navigator.share(shareData);
+                } else {
+                    console.error('Web Share API not supported');
+                }
+            } else {
+                console.error('Failed to upload image to server');
+            }
+        }
+        window.addEventListener('beforeunload', function () {
+           // localStorage.clear();
+        });
+
+        // Function to upload image data to the server
+
+
+
+        
+
+
+        // Add click event listener to the download button
+        document.getElementById('downloadCertificate').addEventListener('click', downloadCertificateAsImage);
+        document.getElementById('shareCertificate').addEventListener('click', shareCertificateLink);
+
+        async function shareCertificateLink() {
+            try {
+                // Check if Web Share API is supported
+                if (navigator.share) {
+                    await navigator.share({
+                        title: 'Check out my certificate!',
+                        text: 'I just pledged to vote in the 2024 election with Pradhaan!',
+                        url: 'https://pradhaan.in/pradhaanpledge.html'
+                    });
+                } else {
+                    throw new Error('Web Share API not supported');
+                }
+            } catch (error) {
+                console.error('Error sharing:', error);
+                // Fallback mechanism in case sharing fails or Web Share API is not supported
+                // You can provide instructions for the user to manually share the link
+                alert('To share the certificate, please copy the link: https://pradhaan.in/pradhaanpledge.html');
+            }
+        }
+        window.addEventListener('beforeunload', function () {
+          //  localStorage.clear();
+        });
+
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
+
+
+</body>
+
+</html>
+                        title: 'Check out my certificate!',
+                        text: 'I just pledged to vote in the 2024 election with Pradhaan!',
+                        url: 'https://pradhaan.in/pradhaanpledge.html'
+                    });
+                } else {
+                    throw new Error('Web Share API not supported');
+                }
+            } catch (error) {
+                console.error('Error sharing:', error);
+                // Fallback mechanism in case sharing fails or Web Share API is not supported
+                // You can provide instructions for the user to manually share the link
+                alert('To share the certificate, please copy the link: https://pradhaan.in/pradhaanpledge.html');
+            }
+        }
+        window.addEventListener('beforeunload', function () {
+          //  localStorage.clear();
+        });
+
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
+
+
+</body>
+
+</html>

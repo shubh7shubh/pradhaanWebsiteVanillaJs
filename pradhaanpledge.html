@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pradhaan Voting Pledge Card</title>
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/animate.min.css">
+      <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+      <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="assets/css/apton-icons.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLJMEYDWHZ"></script>
+
+      <script>
+            // Check if page has been reloaded before
+            var reloaded = localStorage.getItem('reloaded');
+            if (!reloaded) {
+                  // If not reloaded before, reload the page
+                  localStorage.setItem('reloaded', 'true');
+                  location.reload();
+            } else {
+                  // If reloaded before, clear the flag
+                  localStorage.removeItem('reloaded');
+            }
+      </script>
+
+
+      <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-RLJMEYDWHZ');
+
+
+      </script>
+      <!-- theme styles -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/responsive.css">
+      <style>
+            body {
+                  font-family: "Quicksand", sans-serif;
+            }
+
+            .mandatory {
+                  color: red;
+                  margin-left: 2px;
+                  /* Adjust spacing as needed */
+                  font-size: 23px;
+            }
+
+            .headline {
+                  text-align: center;
+                  font-family: 'Quicksand', sans-serif;
+                  font-size: 18px;
+            }
+
+            .displaydata {
+                  display: none;
+            }
+
+            .input_filed {
+                  height: 34px;
+                  border-radius: 20px;
+                  width: 100%;
+                  padding-left: 10px;
+                  font-size: 13px;
+                  color: #979797;
+                  font-family: 'Quicksand', sans-serif;
+                  font-weight: 700;
+                  border: 1px solid #8b0000;
+            }
+
+            .sponsor {
+                  margin-bottom: 20px;
+            }
+
+            /* Customize file input */
+            .costom {
+                  /* Hide default appearance */
+                  appearance: none;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  /* Optional: Set custom background, border, and padding */
+                  background-color: #fff;
+                  border: 1px solid #8b0000;
+                  padding: 0px 12px;
+                  /* Optional: Add hover and focus effects */
+                  transition: border-color 0.3s ease-in-out;
+                  width: 100%;
+                  font-size: 13px;
+                  font-family: 'Quicksand', sans-serif;
+                  height: 40px;
+                  font-weight: 700;
+            }
+
+            /* Add focus effect */
+            .costom:focus {
+                  outline: none;
+                  border-color: #555;
+            }
+
+            select {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  /* Some browsers will not display the caret when using calc, so we put the fallback first */
+                  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5% !important;
+                  /* !important used for overriding all other customisations */
+                  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important;
+                  /* Better placement regardless of input width */
+            }
+
+            /*For IE*/
+            select::-ms-expand {
+                  display: none;
+            }
+
+
+            .radio-row label {
+                  margin-right: 20px;
+                  /* Add some space between label and radio buttons */
+            }
+
+            .radio-row p {
+                  margin: 0;
+                  /* Remove default margin to ensure elements are aligned */
+            }
+
+            /* Optional: Styling for radio buttons and labels */
+            .radio-row input[type="radio"] {
+                  margin-right: 5px;
+                  /* Add some space between radio button and label */
+            }
+
+            .language_container {
+                  display: flex;
+                  gap: 70px;
+                  /* Gap between radio buttons and labels for desktop */
+            }
+
+            /* Responsive Styles */
+            @media screen and (max-width: 600px) {
+                  .radio-row {
+                        flex-direction: column;
+                        /* Change to column layout for mobile */
+                  }
+
+                  .language_container {
+                        gap: 15px;
+                        /* No gap for mobile */
+                  }
+
+                  .divs label {
+                        font-size: 13px;
+                  }
+            }
+
+            .submit-forms {
+                  flex-direction: column;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 100%;
+            }
+
+            .divs {
+                  justify-content: flex-start !important;
+                  align-items: center;
+                  margin: 4% 0;
+                  width: 100%;
+            }
+
+
+
+            .divs input {
+                  border-radius: .25rem;
+                  outline: none;
+            }
+
+            .border_part {
+                  border: 2px solid var(--thm-base);
+                  border-radius: 25px;
+                  padding: 2%;
+            }
+
+            @media screen and (max-width: 992px) {
+                  .divs label {
+                        margin: 0;
+                        width: 100%;
+                  }
+
+            }
+
+            @media screen and (min-width: 992px) {
+                  .divs {
+                        display: flex;
+                  }
+
+                  .radio-row {
+                        display: flex;
+                        align-items: center;
+                        /* Center items vertically */
+                        width: 76%;
+                  }
+
+                  .divs label {
+                        margin: 0;
+                        width: 50%;
+                  }
+
+            }
+
+            #request {
+                  display: none;
+            }
+      </style>
+
+
+</head>
+
+<body>
+      <div class="preloader">
+            <img src="assets/images/IMG-20231205-WA0027.jpg" width="75" class="preloader__image"
+                  alt="Promote Local Leaders">
+      </div><!-- /.preloader -->
+      <div class="page-wrapper">
+            <header class="site-header-one stricky site-header-one__fixed-top">
+                  <div class="container-fluid">
+                        <a href="/">
+                              <div class="site-header-one__logo">
+                                    <div class="logo-size">
+                                          <img src="assets/images/new_logo_(2).png" alt="logo"
+                                                style="height: 8vh; object-fit: cover;">
+                                    </div>
+                              </div>
+                        </a>
+
+
+                        <!-- /.site-header-one__logo -->
+                        <div class="main-nav__main-navigation">
+                              <ul class="main-nav__navigation-box one-page-scroll-menu">
+                                    <li class="scrollToLink"><a href="/">Home</a></li>
+                                    <li class="scrollToLink"><a href="pradhaantoday.html">Pradhaan Today</a></li>
+                                    <li class="scrollToLink">
+                                          <a href="voting.html">Voting</a>
+                                    </li>
+                                    <li class="scrollToLink"><a href="pradhaanpledge.html">Pledge</a></li>
+                                    <li class="scrollToLink"><a href="neuro.html">Neuro</a></li>
+                                    <li class="scrollToLink"><a href="Mission.html"> Mission</a></li>
+                                    <li class="scrollToLink"><a href="blog-details.html">Blog</a></li>
+                                    <li class="scrollToLink"><a href="G20.html">G20</a></li>
+                                    <li class="scrollToLink"><a href="sponsor.html">Sponsors</a></li>
+                              </ul>
+                              <!-- /.main-nav__navigation-box -->
+                        </div>
+                        <!-- /.main-nav__main-navigation -->
+
+
+                        
+
+                        <div class="main-nav__right">
+                              <a href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+                                    class="thm-btn main-nav__btn-two" target="_blank" rel="noopener noreferrer">
+                                    <span>Download App</span>
+                              </a>
+                        </div>
+                        <div class="menu__toggler_header">
+                              <span class="side-menu__toggler"><i class="fa fa-bars"></i></span>
+                        </div>
+                        <!-- /.main-nav__right -->
+                  </div>
+                  <!-- /.container-fluid -->
+            </header><!-- /.site-header-one -->
+            <div>
+                  <div style="text-align: center; margin-top: 130px;">
+                        <h1 style="margin-bottom: 0px;" class="head">Pledge</h1>
+                        <p style="color: black; font-family: 'Times New Roman', Times, serif; font-size:30px ;">
+
+                        <div class="container">
+                              <p class="headline">
+                                    This election 2024, lets Join Pradhaan in making a pledge to showcase the true power
+                                    of “We the People of
+                                    India” by making a Pledge that we VOTE. As we do so, lets NOT SHY AWAY from speaking
+                                    our mind by
+                                    highlighting ONE IMPORTANT political issue at hand and make a clarion call to our
+                                    fellow citizen for the
+                                    same.
+                              </p>
+
+                        </div>
+
+                  </div>
+                  <div class="container">
+                        <div class="sponsor d-f">
+                              <section class="tab" id="sponsor">
+                                    <div class="sponsorsub">
+                                          <div class="sponsor-form">
+                                                <form id="organization-details-form" class="submit-forms">
+                                                      <div class="border_part" style="width: 100%;">
+                                                            <div
+                                                                  style="text-align: center;font-size: 23px;font-weight: 900;">
+                                                                  <span style="color:var(--thm-base)">Part I</span>
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <div class="radio-row">
+                                                                        <label for="photo">Choose Your Language</label>
+                                                                        <div style="align-items: center; flex-direction: unset;"
+                                                                              class="language_container">
+
+                                                                              <p style="display: flex;height: 37px;">
+                                                                                    <input type="radio" checked
+                                                                                          value="english" id="english"
+                                                                                          name="radio-group">
+                                                                                    <label style="text-align: center;"
+                                                                                          for="english">English</label>
+                                                                              </p>
+                                                                              <p style="display: flex;height: 37px;">
+                                                                                    <input type="radio" value="hindi"
+                                                                                          id="hindi" name="radio-group">
+                                                                                    <label style="text-align: center;"
+                                                                                          for="hindi">Hindi</label>
+                                                                              </p>
+                                                                              <p style="display: flex;height: 37px;">
+                                                                                    <input type="radio" value="telugu"
+                                                                                          id="telugu"
+                                                                                          name="radio-group">
+                                                                                    <label style="text-align: center;"
+                                                                                          for="telugu">Telugu</label>
+                                                                              </p>
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label for="stateSelect">Select State<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <select id="stateSelect" class='w-full input_filed'>
+                                                                        <option value="">Select State</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label>Select District<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <select id="citySelect" class='w-full input_filed'>
+                                                                        <option value="">Select District</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label>Select Ward</label>
+                                                                  <select id="wardSelect" class='w-full input_filed'>
+                                                                        <option value="">Select Ward</option>
+                                                                  </select>
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label for="name">Your Name<span
+                                                                              class="mandatory">*</span></label>
+
+                                                                  <input type="text" autocomplete="off" id="nameInput"
+                                                                        placeholder="Enter Your Name"
+                                                                        class='w-full input_filed'
+                                                                        style="border-radius: 20px;" /><br />
+
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label for="photo">Description/Designation</label>
+                                                                  <input type="text" id="designationInput"
+                                                                        placeholder="Enter Your Designation"
+                                                                        autocomplete="off" class='w-full input_filed'
+                                                                        style="border-radius: 20px;" /><br />
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label for="photo">Upload Profile Pic</label>
+                                                                  <input type="file" style="border-radius: 6.25rem;"
+                                                                        class="costom" id="imgInput1"
+                                                                        accept="image/*" /><br />
+                                                            </div>
+                                                            <div id="signatureUpload" class="divs">
+                                                                  <label for="photo">Upload Signature</label>
+                                                                  <input type="file" style="border-radius: 6.25rem;"
+                                                                        class="costom" id="imgInput2"
+                                                                        accept="image/*" /><br />
+                                                            </div>
+                                                      </div>
+
+                                                      <div class="border_part" style="margin-top:20px; width: 100%;">
+                                                            <div
+                                                                  style="text-align: center;font-size: 23px;font-weight: 900;">
+                                                                  <span style="color:var(--thm-base)">Part II</span>
+                                                                  <input style="width: 4%;" type="checkbox"
+                                                                        autocomplete="off" id="signatureCheckbox"
+                                                                        onchange="toggleSignatureUpload()" />
+                                                            </div>
+                                                            <div class="divs"
+                                                                  style="align-items: center; flex-direction: row;">
+                                                                  <label id="request" for="signatureCheckbox"
+                                                                        style="font-weight: bold;color: var(--thm-base);font-size: 19px;font-family: var(--thm-font); width: 100%; text-align: center;">Default
+                                                                        Pledge: Request my fellow citizens to vote for
+                                                                        you</label>
+
+                                                            </div>
+                                                            <div class="divs" id="nameInputcheck"
+                                                                  style="display: flex !important;">
+                                                                  <label for="name">Title Name<span
+                                                                              class="mandatory">*</span></label>
+                                                                  <input type="text" autocomplete="off" id="nameInput2"
+                                                                        placeholder="Enter The Name Or Title, You Seek Support For"
+                                                                        class='w-full input_filed'
+                                                                        style="border-radius: 20px;" /><br />
+                                                            </div>
+                                                            <div class="divs displaydata" id="SampleInputcheck"
+                                                                  style="display: flex !important;">
+                                                                  <label for="photo">Title Pic Uplaod</label>
+                                                                  <input type="file" style="border-radius: 6.25rem;"
+                                                                        class="costom" id="imgInput3"
+                                                                        accept="image/*" /><br />
+                                                            </div>
+                                                            <div class="divs">
+                                                                  <label for="photo">Want to write your own
+                                                                        pledge?</label>
+                                                                  <input type="text" id="pledge_text"
+                                                                        placeholder="Want to write your own pledge?"
+                                                                        autocomplete="off" class='w-full input_filed'
+                                                                        style="border-radius: 20px;" /><br />
+                                                            </div>
+                                                      </div>
+
+                                                      <div style="text-align: center;">
+                                                            <button
+                                                                  style="margin-top: 20px; margin-left: 0px; margin-right: 0px; font-size: 14px; padding: 6px 37.5px;"
+                                                                  class="thm-btn banner-one__btn"
+                                                                  id="downloadButton"><span>Download</span></button>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                              </section>
+
+                        </div>
+                  </div>
+
+
+                  <div id="footer-placeholder"></div>
+                  <script>
+                        // Fetch the footer.html file and insert its content into the placeholder
+                        fetch('footer.html')
+                              .then(response => response.text())
+                              .then(data => {
+                                    document.getElementById('footer-placeholder').innerHTML = data;
+                              });
+                  </script>
+
+            </div><!-- /.page-wrapper -->
+            <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+            <div class="side-menu__block">
+                  <div class="side-menu__block-overlay custom-cursor__overlay">
+                        <div class="cursor"></div>
+                        <div class="cursor-follower"></div>
+                  </div><!-- /.side-menu__block-overlay -->
+                  <div class="side-menu__block-inner ">
+                        <div class="side-menu__top justify-content-end">
+
+                              <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                                          src="assets/images/shapes/close-1-1.png"
+                                          alt="Empowering Local Leadership"></a>
+                        </div><!-- /.side-menu__top -->
+
+
+                        <nav class="mobile-nav__container">
+                              <!-- content is loading via js -->
+                        </nav>
+                        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+                        <div class="side-menu__content">
+
+                              <div class="main-nav__right">
+                                    <!-- <a
+            href="https://play.google.com/store/apps/details?id=com.ioninks.pradhaan&pli=1"
+            class="thm-btn main-nav__btn-two"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Download App</span>
+          </a> -->
+                              </div>
+                              <!--<p><a href="mailto:needhelp@apton.com">needhelp@apton.com</a> <br> <a href="tel:888-999-0000">888 999-->
+                              <!--        0000</a></p>-->
+                              <div class="side-menu__social">
+                                    <a target="_blank"
+                                          href="https://www.facebook.com/people/Pradhaan-India/61556919577490/?mibextid=ZbWKwL"><i
+                                                class="fa-brands fa-square-facebook"></i></a>
+
+                                    <a target="_blank"
+                                          href="https://x.com/PradhaanIndia?t=qjUaPfV2pXryeFyK1C4__w&amp;s=09"><i
+                                                class="fa-brands fa-square-twitter"></i></a>
+
+                                    <a target="_blank"
+                                          href="https://www.instagram.com/pradhaanindia/?utm_source=qr&amp;igsh=MXIxbWZ3MnhmdTV1Zw%3D%3D"><i
+                                                class="fa-brands fa-square-instagram"></i></a>
+
+                                    <a target="_blank" href="https://www.pinterest.com/pradhaanindia/"><i
+                                                class="fa-brands fa-square-pinterest"></i></a>
+
+                              </div>
+                        </div><!-- /.side-menu__content -->
+                  </div><!-- /.side-menu__block-inner -->
+            </div><!-- /.side-menu__block -->
+      </div>
+
+      <script src="assets/js/jquery-3.5.0.min.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/bootstrap-select.min.js"></script>
+      <script src="assets/js/bootstrap-datepicker.min.js"></script>
+      <script src="assets/js/isotope.js"></script>
+      <script src="assets/js/jquery.easing.min.js"></script>
+      <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+      <script src="assets/js/jquery.waypoints.min.js"></script>
+      <script src="assets/js/jquery.counterup.min.js"></script>
+      <script src="assets/js/jquery.magnific-popup.min.js"></script>
+      <script src="assets/js/jquery.validate.min.js"></script>
+      <script src="assets/js/owl.carousel.min.js"></script>
+      <script src="assets/js/TweenMax.min.js"></script>
+      <script src="assets/js/swiper.min.js"></script>
+      <script src="assets/js/wow.js"></script>
+      <script src="assets/js/theme.js"></script>
+      <!-- Include LZString library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+
+
+
+      <!-- Firebase JavaScript SDK -->
+      <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+      <script>
+
+      </script>
+
+
+      <script>
+            // Firebase configuration
+            var firebaseConfig = {
+                  apiKey: "AIzaSyCN2Q-jQqFJUzpHohPD16CJV4LwKg6nvf8",
+                  authDomain: "chunaw-a66df.firebaseapp.com",
+                  projectId: "chunaw-a66df",
+                  storageBucket: "chunaw-a66df.appspot.com",
+                  messagingSenderId: "379389559599",
+                  appId: "1:379389559599:web:e3788d2d8872cf629d17da"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var db = firebase.firestore();
+
+            // Function to fetch states based on the selected country
+            async function fetchStates() {
+                  var selectedCountry = '1-India'; // Assuming the default country is India
+                  var statesCollection = db.collection('location').doc(selectedCountry).collection('State');
+                  var statesSnapshot = await statesCollection.get();
+                  var statesSelect = document.getElementById('stateSelect');
+
+                  statesSnapshot.forEach(function (doc) {
+                        var option = document.createElement('option');
+                        option.value = doc.id;
+                        option.textContent = doc.id;
+                        statesSelect.appendChild(option);
+                  });
+            }
+
+            // Function to fetch cities based on the selected state
+            async function fetchCities() {
+                  var selectedCountry = '1-India'; // Assuming the default country is India
+                  var selectedState = document.getElementById('stateSelect').value;
+                  var citiesCollection = db.collection('location').doc(selectedCountry).collection('State').doc(selectedState).collection('city');
+                  var citiesSnapshot = await citiesCollection.get();
+                  var citySelect = document.getElementById('citySelect');
+                  citySelect.innerHTML = '<option value="">Select City</option>';
+
+                  citiesSnapshot.forEach(function (doc) {
+                        var option = document.createElement('option');
+                        option.value = doc.id;
+                        option.textContent = doc.id;
+                        citySelect.appendChild(option);
+                  });
+            }
+            // Function to toggle visibility of signature upload field based on checkbox state
+            window.onload = function () {
+                  // Disable additional fields by default
+                  document.getElementById("nameInput2").disabled = true;
+                  document.getElementById("imgInput3").disabled = true;
+                  document.getElementById("pledge_text").disabled = true;
+            };
+
+            function toggleSignatureUpload() {
+                  var nameInput2 = document.getElementById("nameInput2");
+                  var imgInput3 = document.getElementById("imgInput3");
+                  var pledgeText = document.getElementById("pledge_text");
+                  var signatureCheckbox = document.getElementById("signatureCheckbox");
+                  var request = document.getElementById("request");
+
+
+                  if (signatureCheckbox.checked) {
+                        nameInput2.disabled = false;
+                        imgInput3.disabled = false;
+                        pledgeText.disabled = false;
+                        request.style.display = "block";
+                  } else {
+                        nameInput2.disabled = true;
+                        imgInput3.disabled = true;
+                        pledgeText.disabled = true;
+                        request.style.display = "none";
+                  }
+            }
+
+
+
+
+
+            // Function to fetch wards based on the selected city
+            async function fetchWards() {
+                  var selectedCountry = '1-India'; // Assuming the default country is India
+                  var selectedState = document.getElementById('stateSelect').value;
+                  var selectedCity = document.getElementById('citySelect').value;
+                  var wardsCollection = db.collection('location').doc(selectedCountry).collection('State').doc(selectedState).collection('city').doc(selectedCity).collection('postal');
+                  var wardsSnapshot = await wardsCollection.get();
+                  var wardSelect = document.getElementById('wardSelect');
+                  wardSelect.innerHTML = '<option value="">Select Ward</option>';
+
+                  wardsSnapshot.forEach(function (doc) {
+                        var option = document.createElement('option');
+                        option.value = doc.id;
+                        option.textContent = doc.id;
+                        wardSelect.appendChild(option);
+                  });
+            }
+
+            // Event listeners for state and city selection
+            document.getElementById('stateSelect').addEventListener('change', function () {
+                  fetchCities();
+            });
+
+            document.getElementById('citySelect').addEventListener('change', function () {
+                  fetchWards();
+            });
+
+            // Event listener for the download button
+            // Event listener for the download button
+            document.getElementById('downloadButton').addEventListener('click', function (event) {
+                  event.preventDefault();
+                  // Get the selected values
+                  var selectedState = document.getElementById('stateSelect').value;
+                  var selectedCity = document.getElementById('citySelect').value;
+                  var selectedWard = document.getElementById('wardSelect').value;
+                  var name = document.getElementById('nameInput').value;
+                  var name2 = document.getElementById('nameInput2').value;
+                  var designation = document.getElementById('designationInput').value;
+                  // const fileInput = document.getElementById('fileInput').files[0];
+                  // const sampleInput = document.getElementById('SampleInput').files[0];
+                  // const signatureInput = document.getElementById('signatureInput').files[0];
+                  var selectedLanguage = document.querySelector('input[name="radio-group"]:checked').value;
+                  var pledge_text = document.getElementById('pledge_text').value;
+
+
+
+                  // Store the selected values in local storage to pass them to the certificate page
+                  localStorage.setItem('selectedState', selectedState);
+                  localStorage.setItem('selectedCity', selectedCity);
+                  localStorage.setItem('selectedWard', selectedWard);
+                  localStorage.setItem('name', name);
+                  localStorage.setItem('name2', name2);
+                  localStorage.setItem('designation', designation);
+                  localStorage.setItem('selectedLanguage', selectedLanguage);
+                  localStorage.setItem('pledge_text', pledge_text || "");
+
+                  // Validation based on checkbox state
+                  var checkbox = document.getElementById("signatureCheckbox");
+                  if (checkbox.checked) {
+                        // Check if all required fields are filled
+                        if (selectedState && selectedCity && name && name2) {
+                              function compressAndStoreImages(image, index) {
+                                    const MAX_WIDTH = 1920; // Adjust the width as needed
+                                    const MAX_HEIGHT = 1080; // Adjust the height as needed
+                                    const TARGET_SIZE = 1024 * 1024; // 1 MB
+
+                                    if (image.size > TARGET_SIZE) {
+                                          const blobURL = URL.createObjectURL(image);
+                                          const img = new Image();
+                                          img.src = blobURL;
+
+                                          img.onload = () => {
+                                                const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+                                                const canvas = document.createElement('canvas');
+                                                const ctx = canvas.getContext('2d');
+                                                canvas.width = newWidth;
+                                                canvas.height = newHeight;
+                                                ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+                                                let quality = 1.0; // Initial quality
+                                                let compressedData;
+
+                                                // Compress the image iteratively until its size is below the target size
+                                                do {
+                                                      const imageData = canvas.toDataURL('image/jpeg', quality);
+                                                      const dataSize = imageData.length * 0.75; // Convert base64 to bytes
+                                                      quality -= 0.1; // Reduce quality
+                                                      compressedData = {
+                                                            name: `image_${index}`,
+                                                            data: imageData
+                                                      };
+                                                } while (compressedData.data.length > TARGET_SIZE && quality > 0);
+
+                                                localStorage.setItem(compressedData.name, compressedData.data);
+                                                console.log(`Image ${index} compressed and stored.`);
+                                          };
+                                    } else {
+                                          // If image size is less than or equal to 1MB, store it directly without compression
+                                          const reader = new FileReader();
+                                          reader.onload = function (event) {
+                                                const imageData = event.target.result;
+                                                const compressedData = {
+                                                      name: `image_${index}`,
+                                                      data: imageData
+                                                };
+                                                localStorage.setItem(compressedData.name, compressedData.data);
+                                                console.log(`Image ${index} stored without compression.`);
+                                          };
+                                          reader.readAsDataURL(image);
+                                    }
+                              }
+
+                              function calculateSize(img, maxWidth, maxHeight) {
+                                    let width = img.width;
+                                    let height = img.height;
+
+                                    // calculate the width and height, constraining the proportions
+                                    if (width > height) {
+                                          if (width > maxWidth) {
+                                                height = Math.round((height * maxWidth) / width);
+                                                width = maxWidth;
+                                          }
+                                    } else {
+                                          if (height > maxHeight) {
+                                                width = Math.round((width * maxHeight) / height);
+                                                height = maxHeight;
+                                          }
+                                    }
+                                    return [width, height];
+                              }
+
+                              const inputIndex = 0; // Specify the index of the input element you want to handle
+
+                              const input = document.querySelector(`.imgInput:nth-child(${inputIndex + 1})`);
+                              if (input) {
+                                    input.addEventListener('change', event => {
+                                          const file = event.target.files[0];
+                                          compressAndStoreImages(file, inputIndex + 1);
+                                    });
+                              } else {
+                                    setTimeout(function () {
+                                          window.location.href = 'https://pradhaan.in/z.html';
+                                    }, 2000);
+                              }
+
+
+                              // Call compressAndStoreImages 3 times
+                              for (let i = 0; i < 3; i++) {
+                                    const fileInput = document.getElementById(`imgInput${i + 1}`);
+                                    const file = fileInput ? fileInput.files[0] : null;
+                                    if (file) {
+                                          compressAndStoreImages(file, i + 1);
+                                    } else {
+                                          localStorage.setItem(`image_${i + 1}`, null);
+                                    }
+                              }
+                              if (!imgInputs.length) {
+                                    setTimeout(function () {
+                                          window.location.href = 'https://pradhaan.in/z.html';
+                                    }, 2000);
+                                    clearInputFields();
+                              }
+                              else {
+                                    alert('Please fill in all required fields.');
+                              }
+
+                        }
+                        else {
+                              alert('Please fill in all required fields.');
+                        }
+
+                  }
+                  else {
+                        // If checkbox is not checked, no need to validate additional fields
+                        // Check if all required fields are filled except the additional ones
+                        if (selectedState && selectedCity && name) {
+                              function compressAndStoreImages(image, index) {
+                                    const MAX_WIDTH = 1920; // Adjust the width as needed
+                                    const MAX_HEIGHT = 1080; // Adjust the height as needed
+                                    const TARGET_SIZE = 1024 * 1024; // 1 MB
+
+                                    if (image.size > TARGET_SIZE) {
+                                          const blobURL = URL.createObjectURL(image);
+                                          const img = new Image();
+                                          img.src = blobURL;
+
+                                          img.onload = () => {
+                                                const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+                                                const canvas = document.createElement('canvas');
+                                                const ctx = canvas.getContext('2d');
+                                                canvas.width = newWidth;
+                                                canvas.height = newHeight;
+                                                ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+                                                let quality = 1.0; // Initial quality
+                                                let compressedData;
+
+                                                // Compress the image iteratively until its size is below the target size
+                                                do {
+                                                      const imageData = canvas.toDataURL('image/jpeg', quality);
+                                                      const dataSize = imageData.length * 0.75; // Convert base64 to bytes
+                                                      quality -= 0.1; // Reduce quality
+                                                      compressedData = {
+                                                            name: `image_${index}`,
+                                                            data: imageData
+                                                      };
+                                                } while (compressedData.data.length > TARGET_SIZE && quality > 0);
+
+                                                localStorage.setItem(compressedData.name, compressedData.data);
+                                                console.log(`Image ${index} compressed and stored.`);
+                                          };
+                                    } else {
+                                          // If image size is less than or equal to 1MB, store it directly without compression
+                                          const reader = new FileReader();
+                                          reader.onload = function (event) {
+                                                const imageData = event.target.result;
+                                                const compressedData = {
+                                                      name: `image_${index}`,
+                                                      data: imageData
+                                                };
+                                                localStorage.setItem(compressedData.name, compressedData.data);
+                                                console.log(`Image ${index} stored without compression.`);
+                                          };
+                                          reader.readAsDataURL(image);
+                                    }
+                              }
+
+                              function calculateSize(img, maxWidth, maxHeight) {
+                                    let width = img.width;
+                                    let height = img.height;
+
+                                    // calculate the width and height, constraining the proportions
+                                    if (width > height) {
+                                          if (width > maxWidth) {
+                                                height = Math.round((height * maxWidth) / width);
+                                                width = maxWidth;
+                                          }
+                                    } else {
+                                          if (height > maxHeight) {
+                                                width = Math.round((width * maxHeight) / height);
+                                                height = maxHeight;
+                                          }
+                                    }
+                                    return [width, height];
+                              }
+
+                              const inputIndex = 0; // Specify the index of the input element you want to handle
+
+                              const input = document.querySelector(`.imgInput:nth-child(${inputIndex + 1})`);
+                              if (input) {
+                                    input.addEventListener('change', event => {
+                                          const file = event.target.files[0];
+                                          compressAndStoreImages(file, inputIndex + 1);
+                                    });
+                              } else {
+                                    setTimeout(function () {
+                                          window.location.href = 'https://pradhaan.in/x.html';
+                                    }, 2000);
+                              }
+
+
+                              // Call compressAndStoreImages 3 times
+                              for (let i = 0; i < 3; i++) {
+                                    const fileInput = document.getElementById(`imgInput${i + 1}`);
+                                    const file = fileInput ? fileInput.files[0] : null;
+                                    if (file) {
+                                          compressAndStoreImages(file, i + 1);
+                                          console.log("compressAndStoreImages", i);
+                                    } else {
+                                          console.log("localStorage", i);
+                                          localStorage.setItem(`image_${i + 1}`, null);
+                                    }
+                              }
+
+                              if (imgInputs.length < 0) {
+                                    setTimeout(function () {
+                                          window.location.href = 'https://pradhaan.in/x.html';
+                                    }, 2000);
+                                    clearInputFields();
+                              }
+                        }
+                        else {
+                              alert('Please fill in all required fields.');
+                        }
+
+                  }
+
+            });
+            function readFileAsBase64(file) {
+                  return new Promise((resolve, reject) => {
+                        if (!file) {
+                              resolve(''); // If file is null or undefined, resolve with an empty string
+                        } else {
+                              const reader = new FileReader();
+                              reader.onload = () => {
+                                    // Resolve with base64 data without splitting
+                                    resolve(reader.result);
+                              };
+                              reader.onerror = reject;
+                              reader.readAsDataURL(file);
+                        }
+                  });
+            }
+
+            // Function to validate character count
+            function validateCharacterCount(inputElement, maxCharacters) {
+                  inputElement.addEventListener("input", function () {
+                        // Get the value of the input
+                        var value = this.value.trim();
+
+                        // If the character count exceeds the maximum allowed, truncate the input value
+                        if (value.length > maxCharacters) {
+                              this.value = value.slice(0, maxCharacters); // Limit the input to maxCharacters characters
+                        }
+                  });
+            }
+
+            // Apply validation to each input field
+            validateCharacterCount(document.getElementById("pledge_text"), 35); // Apply to Subject input fie
+
+            function clearInputFields() {
+                  // Reset input values to empty strings
+                  document.getElementById('stateSelect').value = '';
+                  document.getElementById('citySelect').value = '';
+                  document.getElementById('wardSelect').value = '';
+                  document.getElementById('nameInput').value = '';
+                  document.getElementById('nameInput2').value = '';
+                  document.getElementById('designationInput').value = '';
+                  document.getElementById('imgInput1').value = null;
+                  document.getElementById('imgInput2').value = null;
+                  document.getElementById('imgInput3').value = null;
+            }
+
+
+
+            // Fetch states on page load
+            function readFileAsBase64(file) {
+                  return new Promise((resolve, reject) => {
+                        if (!file) {
+                              resolve(''); // If file is null or undefined, resolve with an empty string
+                        } else {
+                              const reader = new FileReader();
+                              reader.onload = () => resolve(reader.result.split(',')[1]); // Extract base64 data from result
+                              reader.onerror = reject;
+                              reader.readAsDataURL(file);
+                        }
+                  });
+            }
+
+            fetchStates();
+
+      </script>
+</body>
+
+</html>

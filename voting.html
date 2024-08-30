@@ -224,6 +224,8 @@
           arrayUnion,
           arrayRemove,
           serverTimestamp,
+          query,
+          where,
         } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
         const firebaseConfig = {
@@ -317,252 +319,146 @@
 
         //-------------------------------------------------------------------------------------------- Like FUnctionality------------------------------------------------------------------
 
-        //-------------------------------------------------------------------------------------------- Comment FUnctionality------------------------------------------------------------------
+        //         async function fetchPolls() {
+        //           const pollsCollection = collection(firestore, "polls");
+        //           const pollSnapshot = await getDocs(pollsCollection);
 
-        //     async function addComment(pollId, commentText) {
-        //       if (!currentUser) {
-        //         console.error("No user is signed in");
-        //         return;
-        //       }
+        //           const pollsContainer = document.getElementById("polls-container");
 
-        //       const commentData = {
-        //         uid: currentUser.uid,
-        //         displayName: currentUser.displayName,
-        //         text: commentText,
-        //         timestamp: serverTimestamp(),
-        //       };
+        //           pollSnapshot.forEach(async (doc) => {
+        //             const pollData = doc.data();
+        //             const pollId = doc.id;
 
-        //       try {
-        //         const commentsCollection = collection(
-        //           firestore,
-        //           "polls",
-        //           pollId,
-        //           "comments"
-        //         );
-        //         await addDoc(commentsCollection, commentData);
-        //         console.log("Comment added successfully");
-        //       } catch (error) {
-        //         console.error("Error adding comment:", error);
-        //       }
-        //     }
+        //             const pollAndCommentContainer = document.createElement("div");
+        //             pollAndCommentContainer.classList.add("poll-and-comment");
 
-        //     function setupCommentPostButton(pollId) {
-        //       const postButton = document.querySelector(
-        //         `#poll-${pollId} .post-button`
-        //       );
-        //       const textarea = document.querySelector(`#poll-${pollId} textarea`);
+        //             const pollDiv = document.createElement("div");
+        //             pollDiv.classList.add("poll");
 
-        //       postButton.addEventListener("click", () => {
-        //         const commentText = textarea.value.trim();
-        //         if (commentText) {
-        //           addComment(pollId, commentText);
-        //           textarea.value = ""; // Clear the textarea after posting
+        //             const cityFullName = pollData.city;
+        //             const cityName = cityFullName.split("-")[1] || cityFullName;
+
+        //             const cityHeader = document.createElement("div");
+        //             cityHeader.classList.add("poll-city");
+        //             cityHeader.innerText = cityName;
+
+        //             const questionHeader = document.createElement("div");
+        //             questionHeader.classList.add("poll-question");
+        //             questionHeader.innerText = pollData.question;
+
+        //             pollDiv.appendChild(cityHeader);
+        //             pollDiv.appendChild(questionHeader);
+
+        //             const totalVotes = pollData.options.reduce(
+        //               (acc, option) => acc + option.count,
+        //               0
+        //             );
+
+        //             pollData.options.forEach((option) => {
+        //               const percentage =
+        //                 totalVotes > 0
+        //                   ? Math.round((option.count / totalVotes) * 100)
+        //                   : 0;
+
+        //               const pollItem = document.createElement("div");
+        //               pollItem.classList.add("poll-item");
+        //               pollItem.innerHTML = `
+        //         <div class="poll-header">
+        //             <label class="poll-label">
+        //                 <input type="radio" name="poll-${doc.id}" />
+        //                 ${option.text}
+        //             </label>
+        //             <span class="percentage">${percentage}%</span>
+        //         </div>
+        //         <div class="poll-bar-container">
+        //             <div class="poll-bar" style="background-color: #90EE90; width: ${percentage}%;"></div>
+        //         </div>
+        //         <div class="poll-footer">Votes - ${option.count}</div>
+        //       `;
+
+        //               pollDiv.appendChild(pollItem);
+        //             });
+
+        //             const voteSubmitBtn = document.createElement("button");
+        //             voteSubmitBtn.classList.add("submitVoteBtn");
+        //             voteSubmitBtn.innerText = "Submit your Vote";
+        //             pollDiv.appendChild(voteSubmitBtn);
+
+        //             pollAndCommentContainer.appendChild(pollDiv);
+
+        //             const commentSection = document.createElement("div");
+        //             commentSection.classList.add("comment-section");
+
+        //             const likeCount = await getLikeCount(pollId);
+
+        //             commentSection.innerHTML = `
+        //       <div class="votes">
+        //         <h3>Votes</h3>
+        //         <span>${totalVotes}</span>
+        //       </div>
+        //       <hr />
+        //    <div class="share-section">
+        //   <h3>Share</h3>
+        //   <div class="social-icons">
+        //     <a id="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Facebook">
+        //       <i class="fab fa-facebook-f"></i>
+        //     </a>
+        //     <a id="twitter-share" href="https://twitter.com/intent/tweet?url=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Twitter">
+        //       <i class="fab fa-twitter"></i>
+        //     </a>
+        //     <a id="instagram-share" href="https://www.instagram.com/" target="_blank" aria-label="Share on Instagram">
+        //       <i class="fab fa-instagram"></i>
+        //     </a>
+        //     <a id="whatsapp-share" href="https://api.whatsapp.com/send?text=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on WhatsApp">
+        //       <i class="fab fa-whatsapp"></i>
+        //     </a>
+        //   </div>
+        // </div>
+        //       </div>
+        //       <button class="like-button" data-poll-id="${pollId}">
+        //         <i class="fa-solid fa-thumbs-up">
+        //           <span class="like-count">Like  <span style="margin-left:10px;"> ${likeCount}</span></span>
+        //         </i>
+        //       </button>
+        //       </div>
+        //       <h3 style="margin: 10px 0px">Comment</h3>
+        //       <div class="comment-box">
+        //         <div class="comment-input">
+        //           <div class="user-avatar">
+        //             <i class="fa-solid fa-user"></i>
+        //           </div>
+        //           <div class="input-container">
+        //             <textarea placeholder="Say something about this...."></textarea>
+        //             <button class="post-button">Post</button>
+        //           </div>
+        //         </div>
+        //       </div>
+
+        //     `;
+
+        //             pollAndCommentContainer.appendChild(commentSection);
+        //             pollsContainer.appendChild(pollAndCommentContainer);
+
+        //             // Attach the event listener to the like button after it's added to the DOM
+        //             const likeButton = commentSection.querySelector(".like-button");
+        //             likeButton.addEventListener("click", () => {
+        //               console.log("Button clicked");
+        //               handleLikeButtonClick(pollId);
+        //             });
+
+        //             // Setup the comment post button after appending the comment section
+        //             const postButton = commentSection.querySelector(".post-button");
+        //             const textarea = commentSection.querySelector("textarea");
+        //             setupCommentPostButton(postButton, textarea, pollId);
+
+        //             // Fetch and display comments
+        //             fetchAndDisplayComments(pollId, commentSection);
+        //           });
         //         }
-        //       });
-        //     }
-
-        //     async function fetchAndDisplayComments(pollId, commentSection) {
-        //       const commentsCollection = collection(
-        //         firestore,
-        //         "polls",
-        //         pollId,
-        //         "comments"
-        //       );
-        //       const commentsSnapshot = await getDocs(commentsCollection);
-
-        //       commentsSnapshot.forEach((doc) => {
-        //         const commentData = doc.data();
-
-        //         const commentDiv = document.createElement("div");
-        //         commentDiv.classList.add("comment");
-
-        //         commentDiv.innerHTML = `
-        //   <div class="comment-user">
-        //     <div style="display: flex; gap: 10px">
-        //       <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
-        //         <i class="fa-solid fa-user"></i>
-        //         <span class="user-name">${commentData.displayName}</span>
-        //       </div>
-        //       <span class="comment-time">${new Date(
-        //         commentData.timestamp.toDate()
-        //       ).toLocaleString()}</span>
-        //     </div>
-        //     <div class="comment-details">
-        //       <div class="comment-header"></div>
-        //       <div class="comment-text">
-        //         ${commentData.text}
-        //       </div>
-        //     </div>
-        //   </div>
-        // `;
-
-        //         commentSection.appendChild(commentDiv);
-        //       });
-        //     }
-
-        //-------------------------------------------------------------------------------------------- Comment FUnctionality------------------------------------------------------------------
-
-        //     async function fetchPolls() {
-        //       const pollsCollection = collection(firestore, "polls");
-        //       const pollSnapshot = await getDocs(pollsCollection);
-
-        //       const pollsContainer = document.getElementById("polls-container");
-
-        //       pollSnapshot.forEach(async (doc) => {
-        //         const pollData = doc.data();
-        //         const pollId = doc.id;
-
-        //         // Create the main container for each poll and its comment section
-        //         const pollAndCommentContainer = document.createElement("div");
-        //         pollAndCommentContainer.classList.add("poll-and-comment");
-
-        //         // Create the poll container
-        //         const pollDiv = document.createElement("div");
-        //         pollDiv.classList.add("poll");
-
-        //         // Extract and format the city name
-        //         const cityFullName = pollData.city;
-        //         const cityName = cityFullName.split("-")[1] || cityFullName;
-
-        //         // Create and add the city name element
-        //         const cityHeader = document.createElement("div");
-        //         cityHeader.classList.add("poll-city");
-        //         cityHeader.innerText = cityName;
-
-        //         // Create and add the question element
-        //         const questionHeader = document.createElement("div");
-        //         questionHeader.classList.add("poll-question");
-        //         questionHeader.innerText = pollData.question;
-
-        //         // Append the city and question to the pollDiv
-        //         pollDiv.appendChild(cityHeader);
-        //         pollDiv.appendChild(questionHeader);
-
-        //         // Calculate total votes
-        //         const totalVotes = pollData.options.reduce(
-        //           (acc, option) => acc + option.count,
-        //           0
-        //         );
-
-        //         // Add poll options
-        //         pollData.options.forEach((option) => {
-        //           const percentage =
-        //             totalVotes > 0
-        //               ? Math.round((option.count / totalVotes) * 100)
-        //               : 0;
-
-        //           const pollItem = document.createElement("div");
-        //           pollItem.classList.add("poll-item");
-        //           pollItem.innerHTML = `
-        //     <div class="poll-header">
-        //         <label class="poll-label">
-        //             <input type="radio" name="poll-${doc.id}" />
-        //             ${option.text}
-        //         </label>
-        //         <span class="percentage">${percentage}%</span>
-        //     </div>
-        //     <div class="poll-bar-container">
-        //         <div class="poll-bar" style="background-color: #90EE90; width: ${percentage}%;"></div>
-        //     </div>
-        //     <div class="poll-footer">Votes - ${option.count}</div>
-        //   `;
-
-        //           pollDiv.appendChild(pollItem);
-        //         });
-
-        //         pollAndCommentContainer.appendChild(pollDiv);
-
-        //         // Create and add the comment section
-        //         const commentSection = document.createElement("div");
-        //         commentSection.classList.add("comment-section");
-
-        //         // Fetch the like count
-        //         const likeCount = await getLikeCount(pollId);
-
-        //         commentSection.innerHTML = `
-        //   <div class="votes">
-        //     <h3>Votes</h3>
-        //     <span>${totalVotes}</span>
-        //   </div>
-        //   <hr />
-        //   <div class="share-section">
-        //      <div class="share-section">
-        //         <h3>Share</h3>
-        //         <div class="social-icons">
-        //           <a id="facebook-share" href="#" target="_blank" aria-label="Share on Facebook">
-        //             <i class="fab fa-facebook-f"></i>
-        //           </a>
-        //           <a id="twitter-share" href="#" target="_blank" aria-label="Share on Twitter">
-        //             <i class="fab fa-twitter"></i>
-        //           </a>
-        //           <a id="instagram-share" href="#" target="_blank" aria-label="Share on Instagram">
-        //             <i class="fab fa-instagram"></i>
-        //           </a>
-        //           <a id="whatsapp-share" href="#" target="_blank" aria-label="Share on WhatsApp">
-        //             <i class="fab fa-whatsapp"></i>
-        //           </a>
-        //         </div>
-        //      </div>
-        //     </div>
-        //     <button class="like-button" data-poll-id="${pollId}">
-        //       <i class="fa-solid fa-thumbs-up">
-        //         <span class="like-count">Like ${likeCount}</span>
-        //       </i>
-        //     </button>
-        //   </div>
-        //   <h3 style="margin: 10px 0px">Comment</h3>
-        //   <div class="comment-box">
-        //     <div class="comment-input">
-        //       <div class="user-avatar">
-        //         <i class="fa-solid fa-user"></i>
-        //       </div>
-        //       <div class="input-container">
-        //         <div class="input-header">
-        //           <button class="everyone-button">
-        //             Everyone <span>▼</span>
-        //           </button>
-        //         </div>
-        //         <textarea placeholder="Say something about this...."></textarea>
-        //         <button class="post-button">Post</button>
-        //       </div>
-        //     </div>
-        //   </div>
-
-        //   <div class="comment">
-        //     <div class="comment-user">
-        //       <div style="display: flex; gap: 10px">
-        //         <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
-        //           <i class="fa-solid fa-user"></i>
-        //           <span class="user-name">amyrobson</span>
-        //         </div>
-        //         <span class="comment-time">1 month ago</span>
-        //       </div>
-        //       <div class="comment-details">
-        //         <div class="comment-header"></div>
-        //         <div class="comment-text">
-        //           Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You’ve nailed the design and the responsiveness at various breakpoints works really well.
-        //         </div>
-        //       </div>
-        //     </div>
-        //   </div>
-        // `;
-
-        //         pollAndCommentContainer.appendChild(commentSection);
-        //         pollsContainer.appendChild(pollAndCommentContainer);
-
-        //         // Attach the event listener to the like button after it's added to the DOM
-        //         const likeButton = commentSection.querySelector(".like-button");
-        //         likeButton.addEventListener("click", () => {
-        //           console.log("Button clicked");
-        //           handleLikeButtonClick(pollId);
-        //         });
-        //       });
-        //     }
 
         async function fetchPolls() {
           const pollsCollection = collection(firestore, "polls");
           const pollSnapshot = await getDocs(pollsCollection);
-
           const pollsContainer = document.getElementById("polls-container");
 
           pollSnapshot.forEach(async (doc) => {
@@ -582,11 +478,16 @@
             cityHeader.classList.add("poll-city");
             cityHeader.innerText = cityName;
 
+            const activePollH2 = document.createElement("h2");
+            activePollH2.classList.add("activePoll");
+            activePollH2.innerText = "Active Poll";
+
             const questionHeader = document.createElement("div");
             questionHeader.classList.add("poll-question");
             questionHeader.innerText = pollData.question;
 
             pollDiv.appendChild(cityHeader);
+            pollDiv.appendChild(activePollH2);
             pollDiv.appendChild(questionHeader);
 
             const totalVotes = pollData.options.reduce(
@@ -605,7 +506,7 @@
               pollItem.innerHTML = `
         <div class="poll-header">
             <label class="poll-label">
-                <input type="radio" name="poll-${doc.id}" />
+                <input type="radio" name="poll-${doc.id}" value="${option.id}" />
                 ${option.text}
             </label>
             <span class="percentage">${percentage}%</span>
@@ -618,6 +519,11 @@
 
               pollDiv.appendChild(pollItem);
             });
+
+            const voteSubmitBtn = document.createElement("button");
+            voteSubmitBtn.classList.add("submitVoteBtn");
+            voteSubmitBtn.innerText = "Submit your Vote";
+            pollDiv.appendChild(voteSubmitBtn);
 
             pollAndCommentContainer.appendChild(pollDiv);
 
@@ -632,23 +538,11 @@
         <span>${totalVotes}</span>
       </div>
       <hr />
-   <div class="share-section">
-  <h3>Share</h3>
-  <div class="social-icons">
-    <a id="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a id="twitter-share" href="https://twitter.com/intent/tweet?url=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a id="instagram-share" href="https://www.instagram.com/" target="_blank" aria-label="Share on Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a id="whatsapp-share" href="https://api.whatsapp.com/send?text=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
-</div>
+      <div class="share-section">
+        <h3>Share</h3>
+        <div class="social-icons">
+          <!-- Social media share buttons -->
+        </div>
       </div>
       <button class="like-button" data-poll-id="${pollId}">
         <i class="fa-solid fa-thumbs-up">
@@ -668,12 +562,15 @@
           </div>
         </div>
       </div>
-  
- 
     `;
 
             pollAndCommentContainer.appendChild(commentSection);
             pollsContainer.appendChild(pollAndCommentContainer);
+
+            // Attach event listener to submit vote
+            voteSubmitBtn.addEventListener("click", () =>
+              submitVote(pollId, pollData)
+            );
 
             // Attach the event listener to the like button after it's added to the DOM
             const likeButton = commentSection.querySelector(".like-button");
@@ -692,7 +589,88 @@
           });
         }
 
-        // Function to add a new comment to Firestore
+
+        //----------------------------------------------- submit vote functionality---------------------------------------------------
+
+        async function submitVote(pollId, pollData) {
+          if (!currentUser) {
+            console.error("No user is signed in");
+            return;
+          }
+
+          const selectedOption = document.querySelector(
+            `input[name="poll-${pollId}"]:checked`
+          );
+
+          if (!selectedOption) {
+            alert("Please select an option before submitting your vote.");
+            return;
+          }
+
+          const selectedOptionId = selectedOption.value;
+
+          const userId = currentUser.uid;
+          console.log(userId, "userddd");
+
+          const pollDoc = doc(firestore, "polls", pollId);
+          const participantsCollection = collection(pollDoc, "participants");
+
+          // Check if the user has already voted
+          const querySnapshot = await getDocs(
+            query(participantsCollection, where("userId", "==", userId))
+          );
+          const docs = querySnapshot.docs;
+
+          if (docs.length > 0) {
+            // User has already voted
+            const userDoc = docs[0];
+            const previousOptionId = userDoc.data().voted;
+
+            if (previousOptionId !== selectedOptionId) {
+              // User is changing their vote
+              await updateDoc(doc(participantsCollection, userDoc.id), {
+                voted: selectedOptionId,
+              });
+
+              // Update poll options
+              await updateDoc(pollDoc, {
+                options: pollData.options.map((option) => {
+                  if (option.id === selectedOptionId) {
+                    return { ...option, count: option.count + 1 };
+                  } else if (option.id === previousOptionId) {
+                    return { ...option, count: option.count - 1 };
+                  }
+                  return option;
+                }),
+              });
+            }
+          } else {
+            // User is voting for the first time
+            await addDoc(participantsCollection, {
+              userId: userId,
+              voted: selectedOptionId,
+            });
+
+            // Update poll options
+            await updateDoc(pollDoc, {
+              options: pollData.options.map((option) => {
+                if (option.id === selectedOptionId) {
+                  return { ...option, count: option.count + 1 };
+                }
+                return option;
+              }),
+            });
+          }
+
+          // alert("Your vote has been submitted!");
+          showToast("Your vote has been submitted!");
+          window.location.reload();
+        }
+
+
+        
+        //----------------------------------------------- submit vote functionality---------------------------------------------------
+        //-------------------------------------------- Function to add a new comment to Firestore---------------------------------------------------------------------------
         async function addComment(pollId, commentText) {
           if (!currentUser) {
             console.error("No user is signed in");
@@ -782,6 +760,17 @@
         // fetchPolls();
       </script>
 
+      <script>
+        function showToast(message) {
+          const toast = document.getElementById("toast");
+          toast.innerText = message;
+          toast.className = "show";
+          setTimeout(() => {
+            toast.className = toast.className.replace("show", "");
+          }, 3000); // 3 seconds
+        }
+      </script>
+
       <section class="blog-details">
         <div class="pollBox">
           <div class="voting_container">
@@ -805,6 +794,7 @@
             </div>
           </div>
         </div>
+        <div id="toast"></div>
         <!-- /.container -->
       </section>
       <!-- /.blog-details -->

@@ -632,28 +632,27 @@
         <span>${totalVotes}</span>
       </div>
       <hr />
-      <div class="share-section">
-        <div class="share-section">
-          <h3>Share</h3>
-          <div class="social-icons">
-            <a id="facebook-share" href="#" target="_blank" aria-label="Share on Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a id="twitter-share" href="#" target="_blank" aria-label="Share on Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a id="instagram-share" href="#" target="_blank" aria-label="Share on Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a id="whatsapp-share" href="#" target="_blank" aria-label="Share on WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-        </div>
+   <div class="share-section">
+  <h3>Share</h3>
+  <div class="social-icons">
+    <a id="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a id="twitter-share" href="https://twitter.com/intent/tweet?url=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a id="instagram-share" href="https://www.instagram.com/" target="_blank" aria-label="Share on Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a id="whatsapp-share" href="https://api.whatsapp.com/send?text=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</div>
       </div>
       <button class="like-button" data-poll-id="${pollId}">
         <i class="fa-solid fa-thumbs-up">
-          <span class="like-count">Like ${likeCount}</span>
+          <span class="like-count">Like  <span style="margin-left:10px;"> ${likeCount}</span></span>
         </i>
       </button>
       </div>
@@ -664,11 +663,6 @@
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="input-container">
-            <div class="input-header">
-              <button class="everyone-button">
-                Everyone <span>▼</span>
-              </button>
-            </div>
             <textarea placeholder="Say something about this...."></textarea>
             <button class="post-button">Post</button>
           </div>
@@ -722,8 +716,7 @@
             );
             await addDoc(commentsCollection, commentData);
             console.log("Comment added successfully");
-
-            
+            location.reload();
           } catch (error) {
             console.error("Error adding comment:", error);
           }
@@ -790,129 +783,26 @@
       </script>
 
       <section class="blog-details">
-        <div class="container">
+        <div class="pollBox">
           <div class="voting_container">
             <!-- <section  class="poll-details"> -->
-            <div style="display: flex; flex-direction: row" class="container">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                padding: 20px;
+                margin-top: 40px;
+                border-radius: 7px;
+              "
+              class="pollBox"
+            >
               <div
                 style="display: flex; flex-direction: column; gap: 10px"
                 id="polls-container"
                 class="voting_container"
               ></div>
             </div>
-            <!-- </section> -->
-
-            <!-- <div class="comment-section">
-              <div class="votes">
-                <h3>Votes</h3>
-                <span>71</span>
-              </div>
-
-              <hr />
-
-              <div class="share-section">
-                <h3>Share</h3>
-                <div class="social-icons">
-                  <i class="fab fa-facebook-f"></i>
-                  <i class="fab fa-twitter"> </i>
-                  <i class="fab fa-instagram"></i>
-                  <i class="fab fa-whatsapp"></i>
-                </div>
-                <button class="like-button">
-                  <i class="fa-solid fa-thumbs-up"
-                    ><span
-                      style="
-                        margin-left: 5px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        font-weight: 500;
-                      "
-                      >Like 5</span
-                    ></i
-                  >
-                </button>
-              </div>
-              <h3 style="margin: 10px 0px">Comment</h3>
-              <div style="" class="comment-box">
-                <div class="comment-input">
-                  <div class="user-avatar">
-                    <i class="fa-solid fa-user"></i>
-                  </div>
-                  <div class="input-container">
-                    <div class="input-header">
-                      <button class="everyone-button">
-                        Everyone <span>▼</span>
-                      </button>
-                    </div>
-                    <textarea
-                      placeholder="Say something about this...."
-                    ></textarea>
-
-                    <button class="post-button">Post</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="comment">
-                <div class="comment-user">
-                  <div style="display: flex; gap: 10px">
-                    <div
-                      style="
-                        display: flex;
-                        gap: 10px;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <i class="fa-solid fa-user"></i>
-                      <span class="user-name">amyrobson</span>
-                    </div>
-
-                    <span class="comment-time">1 month ago</span>
-                  </div>
-
-                  <div class="comment-details">
-                    <div class="comment-header"></div>
-                    <div class="comment-text">
-                      Impressive! Though it seems the drag feature could be
-                      improved. But overall it looks incredible. You’ve nailed
-                      the design and the responsiveness at various breakpoints
-                      works really well.
-                    </div>
-                  </div>
-                </div>
-       
-              </div>
-
-              <div class="comment">
-                <div class="comment-user">
-                  <div style="display: flex; gap: 10px">
-                    <div
-                      style="
-                        display: flex;
-                        gap: 10px;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <i class="fa-solid fa-user"></i>
-                      <span class="user-name">amyrobson</span>
-                    </div>
-
-                    <span class="comment-time">1 month ago</span>
-                  </div>
-
-                  <div class="comment-details">
-                    <div class="comment-header"></div>
-                    <div class="comment-text">
-                      Impressive! Though it seems the drag feature could be
-                      improved. But overall it looks incredible. You’ve nailed
-                      the design and the responsiveness at various breakpoints
-                      works really well.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
         <!-- /.container -->

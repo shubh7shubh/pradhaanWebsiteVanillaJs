@@ -799,10 +799,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
         onAuthStateChanged(auth, (user) => {
           if (user) {
             console.log("User is logged in:", user);
+            const displayName = user.displayName;
+            const firstName = displayName.split(' ')[0];
             // Update UI or redirect based on login status
             document.getElementById(
               "user-info"
-            ).textContent = `${user.displayName}`;
+            ).textContent = `${firstName}`;
             document.getElementById("logout-button").style.display = "block";
             document.getElementById("login-button").style.display = "none";
           } else {

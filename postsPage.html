@@ -223,22 +223,72 @@
           const postDiv = document.createElement("div");
           postDiv.classList.add("post");
 
-          // Post image
-          const postImage = document.createElement("img");
-          postImage.src = postData.post_image;
-          postImage.alt = "Post Image";
-          postImage.classList.add("post-image");
-          postDiv.appendChild(postImage);
+          // city and description container
+          const cityDescContainer = document.createElement("div");
+          cityDescContainer.classList.add("city-desc-container");
+          postDiv.appendChild(cityDescContainer);
+          const cityName = document.createElement("p");
+          cityName.innerText = postData.full_add[1];
+          cityName.classList.add("poll-city");
+
+          cityDescContainer.appendChild(cityName);
 
           // Post description
           const postDesc = document.createElement("p");
           postDesc.innerText = postData.post_desc;
           postDesc.classList.add("post-desc");
-          postDiv.appendChild(postDesc);
+          cityDescContainer.appendChild(postDesc);
+
+
+          // image and comments container
+
+          const imageCommentContainer = document.createElement("div");
+          imageCommentContainer.classList.add("image-comment-container");
+          postDiv.appendChild(imageCommentContainer);
+
+
+          // Image container
+          const imgDiv = document.createElement("div");
+          imgDiv.classList.add("img-div");
+          imageCommentContainer.appendChild(imgDiv);
+
+          // Post image
+          const postImage = document.createElement("img");
+          postImage.src = postData.post_image; 
+          postImage.alt = "Post Image";
+          postImage.classList.add("post-image");
+          imgDiv.appendChild(postImage);
+
+
 
           // Like and Comment section
           const likeCommentSection = document.createElement("div");
-          likeCommentSection.classList.add("like-comment-section");
+          likeCommentSection.classList.add("right-container");
+
+
+          const shareSection = document.createElement("div");
+          shareSection.classList.add("share-section");
+
+          shareSection.innerHTML = `
+          <div class="share-section">
+        <h3>Share</h3>
+       <div class="social-icons">
+            <a id="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a id="twitter-share" href="https://twitter.com/intent/tweet?url=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a id="instagram-share" href="https://www.instagram.com/" target="_blank" aria-label="Share on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a id="whatsapp-share" href="https://api.whatsapp.com/send?text=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+          `
+          likeCommentSection.appendChild(shareSection);
 
           // Like button
           const likeButton = document.createElement("button");
@@ -251,21 +301,47 @@
           const commentSection = document.createElement("div");
           commentSection.classList.add("comment-section");
 
-          // Comment input
+
+          const newShareSection = document.createElement("div");
+          newShareSection.classList.add("share-section");
+
+          newShareSection.innerHTML = `
+          <div class="share-section">
+        <h3>Share</h3>
+       <div class="social-icons">
+            <a id="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a id="twitter-share" href="https://twitter.com/intent/tweet?url=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a id="instagram-share" href="https://www.instagram.com/" target="_blank" aria-label="Share on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a id="whatsapp-share" href="https://api.whatsapp.com/send?text=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+          `
+          commentSection.appendChild(newShareSection);
+
+          // Comment inputb
           const commentInput = document.createElement("textarea");
+          commentInput.classList.add("commentTextarea");
           commentInput.placeholder = "Add a comment...";
           commentSection.appendChild(commentInput);
 
           // Post comment button
           const postCommentButton = document.createElement("button");
           postCommentButton.classList.add("post-comment-button");
-          postCommentButton.innerText = "Post Comment";
+          postCommentButton.innerText = "Post";
           postCommentButton.addEventListener("click", () => handleComment(postId, commentInput.value));
           commentSection.appendChild(postCommentButton);
 
           // Append the like and comment section to the post
           likeCommentSection.appendChild(commentSection);
-          postDiv.appendChild(likeCommentSection);
+          imageCommentContainer.appendChild(likeCommentSection);
 
           // Append the postDiv to the container
           postsContainer.appendChild(postDiv);

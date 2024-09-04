@@ -128,6 +128,9 @@
                 <a href="voting.html">Voting</a>
               </li>
               <li class="scrollToLink">
+                <a href="postsCollections.html">Posts</a>
+                </li>
+                <li class="scrollToLink">
                 <a href="pradhaanpledge.html">Pledge</a>
               </li>
               <li class="scrollToLink">
@@ -541,7 +544,20 @@
       <div class="share-section">
         <h3>Share</h3>
         <div class="social-icons">
-          <!-- Social media share buttons -->
+       <div class="social-icons">
+            <a id="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a id="twitter-share" href="https://twitter.com/intent/tweet?url=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a id="instagram-share" href="https://www.instagram.com/" target="_blank" aria-label="Share on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a id="whatsapp-share" href="https://api.whatsapp.com/send?text=https://pradhaan.in/voting.html" target="_blank" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
       </div>
       <button class="like-button" data-poll-id="${pollId}">
@@ -795,6 +811,15 @@
           </div>
         </div>
         <div id="toast"></div>
+        <div id="footer-placeholder"></div>
+        <script>
+          // Fetch the footer.html file and insert its content into the placeholder
+          fetch("footer.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("footer-placeholder").innerHTML = data;
+            });
+        </script>
         <!-- /.container -->
       </section>
       <!-- /.blog-details -->

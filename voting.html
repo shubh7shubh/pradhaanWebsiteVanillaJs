@@ -272,7 +272,8 @@
         // Function to handle the like button click
         async function handleLikeButtonClick(pollId) {
           if (!currentUser) {
-            alert("Please log in to like the poll.");
+            // alert("Please log in to like the poll.");
+            showToast("Please log in to like the poll."); 
             return;
           }
 
@@ -611,6 +612,7 @@
         async function submitVote(pollId, pollData) {
           if (!currentUser) {
             console.error("No user is signed in");
+            showToast("Please sign in to add a vote.")
             return;
           }
 
@@ -619,7 +621,8 @@
           );
 
           if (!selectedOption) {
-            alert("Please select an option before submitting your vote.");
+            // alert("Please select an option before submitting your vote.");
+            showToast("Please select an option before submitting your vote.");
             return;
           }
 
@@ -690,6 +693,7 @@
         async function addComment(pollId, commentText) {
           if (!currentUser) {
             console.error("No user is signed in");
+            showToast("Please sign in to add a comment.");
             return;
           }
 
@@ -710,9 +714,11 @@
             );
             await addDoc(commentsCollection, commentData);
             console.log("Comment added successfully");
+            showToast("Comment added successfully");
             location.reload();
           } catch (error) {
             console.error("Error adding comment:", error);
+            showToast("Error adding comment")
           }
         }
 
